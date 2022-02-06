@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-05T10:30:22.917Z</updated>
+  <updated>2022-02-06T05:53:17.608Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo如何新建一个博文</title>
+    <link href="http://example.com/2022/02/06/hexo%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E6%96%87/"/>
+    <id>http://example.com/2022/02/06/hexo%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E6%96%87/</id>
+    <published>2022-02-06T05:10:57.000Z</published>
+    <updated>2022-02-06T05:53:17.608Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo搭建完成，可以开始写你的博文了。</p><h2 id="新建博文"><a href="#新建博文" class="headerlink" title="新建博文"></a>新建博文</h2><p>在本地根目录打开git ，使用命令新建博文</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure><p><code>layout</code> 是博文的布局，默认为 <code>post</code> ，可以不写。</p><p><code>title</code> 是文件的名字，储存在 <code>source/_posts</code> 下。</p><p><strong>注意</strong>这里的<code>title</code>不是文章名，具体文章中显示的文章标题可以在文章文件中修改，</p><p>其中<code>[layout]</code>在<code>scaffolds</code>中，默认情况下有三个模板<code>post</code>、<code>draft</code>、<code>page</code></p><table><thead><tr><th>参数</th><th>功能</th><th>路径</th></tr></thead><tbody><tr><td>post</td><td>新建文章</td><td>&#x2F;source&#x2F;_posts&#x2F;</td></tr><tr><td>draft</td><td>新建草稿</td><td>&#x2F;source&#x2F;_drafts&#x2F;</td></tr><tr><td>page</td><td>新建页面（标签页，分类页等）</td><td>&#x2F;source&#x2F;</td></tr></tbody></table><h3 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new hexo如何新建一个博文</span><br><span class="line">...</span><br><span class="line">INFO  Created: ~\blog\<span class="built_in">source</span>\_posts\hexo如何新建一个博文.md</span><br></pre></td></tr></table></figure><p>这样就创建了一篇名为”hexo如何新建一个博文”的文章了<br>在MarkDown编辑器上打开就可以编辑了</p><h2 id="Front-matter-设置"><a href="#Front-matter-设置" class="headerlink" title="Front-matter 设置"></a>Front-matter 设置</h2><p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量，举例来说：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo如何新建一个博文</span><br><span class="line">date: 2022-02-06 13:10:57</span><br><span class="line"><span class="section">tags:hexo</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><p>以下是预先定义的参数，可以在模板中使用这些参数值并加以利用。  <a href="https://hexo.io/zh-cn/docs/front-matter.html">官方文档</a></p><table><thead><tr><th align="left">参数</th><th align="left">描述</th><th align="left">默认值</th></tr></thead><tbody><tr><td align="left"><code>layout</code></td><td align="left">布局</td><td align="left"><a href="https://hexo.io/zh-cn/docs/configuration#%E6%96%87%E7%AB%A0"><code>config.default_layout</code></a></td></tr><tr><td align="left"><code>title</code></td><td align="left">标题</td><td align="left">文章的文件名</td></tr><tr><td align="left"><code>date</code></td><td align="left">建立日期</td><td align="left">文件建立日期</td></tr><tr><td align="left"><code>updated</code></td><td align="left">更新日期</td><td align="left">文件更新日期</td></tr><tr><td align="left"><code>comments</code></td><td align="left">开启文章的评论功能</td><td align="left">true</td></tr><tr><td align="left"><code>tags</code></td><td align="left">标签（不适用于分页）</td><td align="left">无</td></tr><tr><td align="left"><code>categories</code></td><td align="left">分类（不适用于分页）</td><td align="left">无</td></tr><tr><td align="left"><code>permalink</code></td><td align="left">覆盖文章网址</td><td align="left"></td></tr><tr><td align="left"><code>excerpt</code></td><td align="left">Page excerpt in plain text. Use <a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">this plugin</a> to format the text</td><td align="left"></td></tr><tr><td align="left"><code>disableNunjucks</code></td><td align="left">Disable rendering of Nunjucks tag <code>&#123;&#123; &#125;&#125;</code>&#x2F;<code>&#123;% %&#125;</code> and <a href="https://hexo.io/docs/tag-plugins">tag plugins</a> when enabled</td><td align="left"></td></tr><tr><td align="left"><code>lang</code></td><td align="left">Set the language to override <a href="https://hexo.io/docs/internationalization#Path">auto-detection</a></td><td align="left">Inherited from <code>_config.yml</code></td></tr></tbody></table><p>自己设置需要的变量</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">tags: hexo</span><br><span class="line">categories: 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p><strong>注意</strong> 参数和值之间要用空格分隔。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;hexo搭建完成，可以开始写你的博文了。&lt;/p&gt;
+&lt;h2 id=&quot;新建博文&quot;&gt;&lt;a href=&quot;#新建博文&quot; class=&quot;headerlink&quot; title=&quot;新建博文&quot;&gt;&lt;/a&gt;新建博文&lt;/h2&gt;&lt;p&gt;在本地根目录打开git ，使用命令新建博文&lt;/p&gt;
+&lt;figure </summary>
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
