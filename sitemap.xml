@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ling71.gitee.io/blog/posts/3099682158.html</loc>
+    <loc>https://ling71.gitee.io/posts/3099682158.html</loc>
     
     <lastmod>2022-02-07</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://ling71.gitee.io/blog/posts/2036055210.html</loc>
+    <loc>https://ling71.gitee.io/posts/2036055210.html</loc>
     
     <lastmod>2022-02-07</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://ling71.gitee.io/blog/posts/1243066710.html</loc>
+    <loc>https://ling71.gitee.io/posts/1243066710.html</loc>
     
     <lastmod>2022-02-07</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://ling71.gitee.io/blog/artitalk/index.html</loc>
+    <loc>https://ling71.gitee.io/artitalk/index.html</loc>
     
     <lastmod>2022-02-06</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://ling71.gitee.io/blog/about/index.html</loc>
+    <loc>https://ling71.gitee.io/about/index.html</loc>
     
     <lastmod>2022-02-06</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://ling71.gitee.io/blog/link/index.html</loc>
+    <loc>https://ling71.gitee.io/link/index.html</loc>
     
     <lastmod>2022-02-05</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://ling71.gitee.io/blog/categories/index.html</loc>
+    <loc>https://ling71.gitee.io/categories/index.html</loc>
     
     <lastmod>2022-02-05</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://ling71.gitee.io/blog/tags/index.html</loc>
+    <loc>https://ling71.gitee.io/tags/index.html</loc>
     
     <lastmod>2022-02-05</lastmod>
     
@@ -75,7 +75,7 @@
   
 
   <url>
-    <loc>https://ling71.gitee.io/blog</loc>
+    <loc>https://ling71.gitee.io/</loc>
     <lastmod>2022-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -83,7 +83,7 @@
 
   
   <url>
-    <loc>https://ling71.gitee.io/blog/tags/hexo%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://ling71.gitee.io/tags/hexo%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -92,7 +92,7 @@
 
   
   <url>
-    <loc>https://ling71.gitee.io/blog/categories/hexo%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://ling71.gitee.io/categories/hexo%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
