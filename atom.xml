@@ -3,11 +3,11 @@
   <title>ALING&#39;s BLOG</title>
   
   
-  <link href="https://zilinshisi.github.io/atom.xml" rel="self"/>
+  <link href="https://blog.ling71.cn/atom.xml" rel="self"/>
   
-  <link href="https://zilinshisi.github.io/"/>
+  <link href="https://blog.ling71.cn/"/>
   <updated>2022-02-11T14:52:03.925Z</updated>
-  <id>https://zilinshisi.github.io/</id>
+  <id>https://blog.ling71.cn/</id>
   
   <author>
     <name>Cal</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>C++:字符串之比较函数strcmp()</title>
-    <link href="https://zilinshisi.github.io/posts/1559260774.html"/>
-    <id>https://zilinshisi.github.io/posts/1559260774.html</id>
+    <link href="https://blog.ling71.cn/posts/1559260774.html"/>
+    <id>https://blog.ling71.cn/posts/1559260774.html</id>
     <published>2022-02-11T04:26:19.000Z</published>
     <updated>2022-02-11T14:52:03.925Z</updated>
     
@@ -34,18 +34,18 @@
     
     
     
-    <category term="c++" scheme="https://zilinshisi.github.io/tags/c/"/>
+    <category term="c++" scheme="https://blog.ling71.cn/tags/c/"/>
     
-    <category term="字符串" scheme="https://zilinshisi.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <category term="字符串" scheme="https://blog.ling71.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-    <category term="strcmp" scheme="https://zilinshisi.github.io/tags/strcmp/"/>
+    <category term="strcmp" scheme="https://blog.ling71.cn/tags/strcmp/"/>
     
   </entry>
   
   <entry>
     <title>hexo博客:优化博客文章链接</title>
-    <link href="https://zilinshisi.github.io/posts/3099682158.html"/>
-    <id>https://zilinshisi.github.io/posts/3099682158.html</id>
+    <link href="https://blog.ling71.cn/posts/3099682158.html"/>
+    <id>https://blog.ling71.cn/posts/3099682158.html</id>
     <published>2022-02-07T13:19:08.000Z</published>
     <updated>2022-02-07T13:58:32.053Z</updated>
     
@@ -59,17 +59,17 @@
     
     
     
-    <category term="hexo博客" scheme="https://zilinshisi.github.io/categories/hexo%E5%8D%9A%E5%AE%A2/"/>
+    <category term="hexo博客" scheme="https://blog.ling71.cn/categories/hexo%E5%8D%9A%E5%AE%A2/"/>
     
     
-    <category term="hexo博客" scheme="https://zilinshisi.github.io/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
+    <category term="hexo博客" scheme="https://blog.ling71.cn/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>hexo博客:如何新建一个博文</title>
-    <link href="https://zilinshisi.github.io/posts/2036055210.html"/>
-    <id>https://zilinshisi.github.io/posts/2036055210.html</id>
+    <link href="https://blog.ling71.cn/posts/2036055210.html"/>
+    <id>https://blog.ling71.cn/posts/2036055210.html</id>
     <published>2022-02-06T05:10:57.000Z</published>
     <updated>2022-02-07T13:21:48.130Z</updated>
     
@@ -85,17 +85,17 @@
     
     
     
-    <category term="hexo博客" scheme="https://zilinshisi.github.io/categories/hexo%E5%8D%9A%E5%AE%A2/"/>
+    <category term="hexo博客" scheme="https://blog.ling71.cn/categories/hexo%E5%8D%9A%E5%AE%A2/"/>
     
     
-    <category term="hexo博客" scheme="https://zilinshisi.github.io/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
+    <category term="hexo博客" scheme="https://blog.ling71.cn/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://zilinshisi.github.io/posts/1243066710.html"/>
-    <id>https://zilinshisi.github.io/posts/1243066710.html</id>
+    <link href="https://blog.ling71.cn/posts/1243066710.html"/>
+    <id>https://blog.ling71.cn/posts/1243066710.html</id>
     <published>2022-02-05T04:18:31.000Z</published>
     <updated>2022-02-11T15:10:53.561Z</updated>
     
