@@ -6,7 +6,7 @@
   <link href="https://zilinshisi.github.io/atom.xml" rel="self"/>
   
   <link href="https://zilinshisi.github.io/"/>
-  <updated>2022-02-07T13:58:32.053Z</updated>
+  <updated>2022-02-11T05:04:24.534Z</updated>
   <id>https://zilinshisi.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++:字符串之比较函数strcmp()</title>
+    <link href="https://zilinshisi.github.io/posts/1559260774.html"/>
+    <id>https://zilinshisi.github.io/posts/1559260774.html</id>
+    <published>2022-02-11T04:26:19.000Z</published>
+    <updated>2022-02-11T05:04:24.534Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><h3 id="原型："><a href="#原型：" class="headerlink" title="原型："></a>原型：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">strcmp</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *s1, <span class="type">const</span> <span class="type">char</span> *s2)</span></span>;</span><br></pre></td></tr></table></figure><h3 id="头文件："><a href="#头文件：" class="headerlink" title="头文件："></a>头文件：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br></pre></td></tr></table></figure><h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><p>用来比较两个字符串</p><h3 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h3><p><code>s1</code>、<code>s2</code>为两个进行比较的字符串</p><h3 id="返回值："><a href="#返回值：" class="headerlink" title="返回值："></a>返回值：</h3><p>若<code>s1</code>、<code>s2</code>字符串相等，则返回零；若<code>s1</code>大于<code>s2</code>，则返回大于零的数；否则，则返回小于零的数。</p><h3 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h3><p><code>strcmp()</code>函数是根据<code>ACSII</code>码的值来比较两个字符串的；<code>strcmp()</code>函数首先将<code>s1</code>字符串的第一个字符值减去<code>s2</code>第一个字符，若差值为零则继续比较下去；若差值不为零，则返回差值。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、介绍&quot;&gt;&lt;a href=&quot;#1、介绍&quot; class=&quot;headerlink&quot; title=&quot;1、介绍&quot;&gt;&lt;/a&gt;1、介绍&lt;/h3&gt;&lt;h3 id=&quot;原型：&quot;&gt;&lt;a href=&quot;#原型：&quot; class=&quot;headerlink&quot; title=&quot;原型：&quot;&gt;&lt;/a&gt;原型</summary>
+      
+    
+    
+    
+    
+    <category term="c++" scheme="https://zilinshisi.github.io/tags/c/"/>
+    
+    <category term="字符串" scheme="https://zilinshisi.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+    <category term="strcmp" scheme="https://zilinshisi.github.io/tags/strcmp/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo博客:优化博客文章链接</title>

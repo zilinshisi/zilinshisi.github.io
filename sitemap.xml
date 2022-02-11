@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zilinshisi.github.io/posts/1559260774.html</loc>
+    
+    <lastmod>2022-02-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zilinshisi.github.io/link/index.html</loc>
     
     <lastmod>2022-02-07</lastmod>
@@ -76,7 +85,7 @@
 
   <url>
     <loc>https://zilinshisi.github.io/</loc>
-    <lastmod>2022-02-09</lastmod>
+    <lastmod>2022-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,7 +93,28 @@
   
   <url>
     <loc>https://zilinshisi.github.io/tags/hexo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-02-09</lastmod>
+    <lastmod>2022-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zilinshisi.github.io/tags/c/</loc>
+    <lastmod>2022-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zilinshisi.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2022-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zilinshisi.github.io/tags/strcmp/</loc>
+    <lastmod>2022-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -93,7 +123,7 @@
   
   <url>
     <loc>https://zilinshisi.github.io/categories/hexo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-02-09</lastmod>
+    <lastmod>2022-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
