@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++:字符串的基础操作, C++,python,算法,hexo,hexo创建文章,hexo部署,Git">
+    <meta name="keywords" content="算法练习01：4张牌凑24点, C++,python,算法,hexo,hexo创建文章,hexo部署,Git">
     <meta name="description" content="不要轻易试探自己的底线，人没有想象中那么强大">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C++:字符串的基础操作 | LING&#39;s BLOG</title>
+    <title>算法练习01：4张牌凑24点 | LING&#39;s BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -380,12 +380,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++:字符串的基础操作</h1>
+                    <h1 class="description center-align post-title">算法练习01：4张牌凑24点</h1>
                 </div>
             </div>
         </div>
@@ -501,20 +501,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/c/">
-                                <span class="chip bg-color">c++</span>
+                            <a href="/tags/algorithm/">
+                                <span class="chip bg-color">algorithm</span>
                             </a>
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
-                            </a>
-                        
-                            <a href="/tags/String/">
-                                <span class="chip bg-color">String</span>
-                            </a>
-                        
-                            <a href="/tags/C-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
-                                <span class="chip bg-color">C++基础语法</span>
+                            <a href="/tags/python%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/">
+                                <span class="chip bg-color">python算法练习</span>
                             </a>
                         
                     </div>
@@ -525,8 +517,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C/" class="post-category">
-                                C++
+                            <a href="/categories/algorithm/" class="post-category">
+                                algorithm
                             </a>
                         
                     </div>
@@ -538,7 +530,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-14
+                    2022-03-09
                 </div>
                 
 
@@ -547,14 +539,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    911
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    10 分
                 </div>
                 
 
@@ -577,133 +569,123 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="C-字符串"><a href="#C-字符串" class="headerlink" title="C++ 字符串"></a>C++ 字符串</h1><p>c++提供了两种类型的字符串表示形式：</p>
-<ul>
-<li>C语言风格字符串</li>
-<li>C++引入的<code>string类</code>类型</li>
-</ul>
-<h2 id="C-风格字符串"><a href="#C-风格字符串" class="headerlink" title="C 风格字符串"></a>C 风格字符串</h2><p>C 风格的字符串起源于 C 语言，并在 C++ 中继续得到支持。字符串实际上是使用 <strong><code>null</code></strong> 字符 <strong><code>\0</code></strong> 终止的一维字符数组。因此，一个以 null 结尾的字符串，包含了组成字符串的字符。</p>
-<p>下面的声明和初始化创建了一个 <strong><code>BELL</code></strong> 字符串。由于在数组的末尾存储了空字符，所以字符数组的大小比单词 <strong><code>BELL</code></strong> 的字符数多一个。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">char</span> site<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token char">'B'</span><span class="token punctuation">,</span> <span class="token char">'E'</span><span class="token punctuation">,</span> <span class="token char">'L'</span><span class="token punctuation">,</span> <span class="token char">'L'</span><span class="token punctuation">,</span> <span class="token char">'\0'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>依据数组初始化规则，可以把上面的语句写成以下语句：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">char</span> site<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"BELL"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>其实，不用把 <strong><code>null</code></strong> 字符放在字符串常量的末尾。C++ 编译器会在初始化数组时，自动把 <strong><code>\0</code></strong> 放在字符串的末尾。</p>
-<h2 id="C-风格字符串-1"><a href="#C-风格字符串-1" class="headerlink" title="C++风格字符串"></a>C++风格字符串</h2><p>C++ 中有大量的函数用来操作以 null 结尾的字符串:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">作用</th>
-<th style="text-align:left">函数</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">字符串复制</td>
-<td style="text-align:left"><strong><code>strcpy(str1,str2);</code></strong></td>
-<td>复制字符串 <code>str2</code> 到字符串 <code>str1</code>。</td>
-</tr>
-<tr>
-<td style="text-align:left">字符串连接</td>
-<td style="text-align:left"><strong><code>strcat(str1,str2);</code></strong></td>
-<td>连接字符串 <code>str2</code> 到字符串 <code>str1</code> 的末尾。连接字符串也可以用 <strong>+</strong> 号，<br>例如: <code>string str1 = &quot;bell&quot;; string str2 = &quot;AI&quot;; string str = str1 + str2;</code></td>
-</tr>
-<tr>
-<td style="text-align:left">字符串长度</td>
-<td style="text-align:left"><strong><code>strlen(str1);</code></strong></td>
-<td>返回字符串 <code>str1</code> 的长度。</td>
-</tr>
-<tr>
-<td style="text-align:left">字符串比较</td>
-<td style="text-align:left"><strong><code>strcmp(str1,str2);</code></strong></td>
-<td>如果 <code>str1</code> 和 <code>str2</code> 是相同的，则返回 0；如果 <code>str1&lt;str2</code> 则返回值小于 0；如果 <code>str1&gt;str2</code> 则返回值大于 0。</td>
-</tr>
-<tr>
-<td style="text-align:left">字符查找</td>
-<td style="text-align:left"><strong><code>strchr(str1, ch);</code></strong></td>
-<td>返回一个指针，指向字符串 <code>str1</code>中字符 ch 的第一次出现的位置。</td>
-</tr>
-<tr>
-<td style="text-align:left">字符串查找</td>
-<td style="text-align:left"><strong><code>strstr(str1,str2);</code></strong></td>
-<td>返回一个指针，指向字符串 <code>str1</code> 中字符串 <code>str2</code> 的第一次出现的位置。</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>下面的实例使用了上述的一些函数：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstring></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+                <p>　　今天想和大家讨论的是一道我从这学期cs的期末考试得到灵感的题：Get 24 Poker Game。说到 Get 24 Poker Game，也就是我们通常说的凑24点，大家可能都比较熟悉。但是因为这个游戏有很多变种，我们还是来简单说一下游戏的规则。老规矩，上Wikipedia：</p>
+<blockquote>
+<p>  The <strong>24 Game</strong> is an arithmetical card game in which the objective is to find a way to manipulate four integers so that the end result is 24.</p>
+</blockquote>
+<p>　　简单来说，这个游戏需要玩家快速用随机抽出的四张牌上的整数通过常见的加减乘除计算来凑出24点来取得胜利（一定要用全4张，不可以弃牌）。不同于我们通常玩的斗地主，钓鱼等等扑克游戏，凑24点更考验玩家的数学反应能力（less fun but somewhat interesting:)）。在这里稍稍跑一下题，因为可能会有人好奇，为什么恰恰选了24这个数字。其实答案很直白，因为这个数字最容易被凑出来：24是拥有八个除数的最小整数(1, 2, 3, 4, 6, 8, 12, and <strong>24</strong>），使用这个数字不仅仅把游戏变得更加简单（毕竟可能没有人想花一个小时在用扑克牌凑数上），还把游戏作废（目标数字凑不出来）的几率降到最小。</p>
+<blockquote>
+<p>  第一部分的大意是写出一个函数，让其能够以列表的形式接收四个数字并试图用加减乘除的方法来凑出目标点数（<strong>注意，这里不包括括号操作</strong>）。</p>
+<p>  第二部分相对于前一部分难度更高一点，要求写出函数，让其能够接受四个数字，并可通过对其进行加减乘除（这里包括括号）的操作来凑出目标点数。</p>
+</blockquote>
+<p>　　</p>
+<hr>
+<p> 　</p>
+<p>　　通过读题，我们可以发现第一题和第二题最主要的差别在以下两点上：</p>
+<ol>
+<li>第一题只需要考虑四个数字，三个符号的排列组合。</li>
+<li>第二题需要考虑到一个，或者多个括号的算法，在这种情况下，我们不能直接计算结果，因为没有办法确定括号的个数和位置。</li>
+</ol>
+<p>　　<strong>第一部分</strong>我们可以从运算式子的结构入手。正常写出的话，一个有四个运算数字的式子会长这个样子：</p>
+<p>$1+2+3+4$</p>
+<p>结构一目了然，四个数字，三个运算符号。如果想生成所有排列组合的可能性的话，我们可以用嵌套for循环很容易的用代码实现如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_all_comb</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> op_1 <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'+'</span><span class="token punctuation">,</span><span class="token string">'-'</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">,</span><span class="token string">'/'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># 用第一个for loop来考虑所有第一个位置的运算符号的可能性</span>
+        <span class="token keyword">for</span> op_2 <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'+'</span><span class="token punctuation">,</span><span class="token string">'-'</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">,</span><span class="token string">'/'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># 用第二个for loop来考虑所有第二个位置的运算符号的可能性</span>
+            <span class="token keyword">for</span> op_3 <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'+'</span><span class="token punctuation">,</span><span class="token string">'-'</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">,</span><span class="token string">'/'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># 用第三个for loop来考虑所有第三个位置的运算符号的可能性</span>
+                <span class="token comment"># 构造一个字符串</span>
+                comb <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>num_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>op_1<span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>num_list<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>op_2<span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>num_list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>op_3<span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>num_list<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
+                <span class="token keyword">print</span><span class="token punctuation">(</span>comb<span class="token punctuation">)</span> <span class="token comment"># 打印运算式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>　　这段代码的输出结果为 ‘1+2+3+4’，‘1+2+3-4’，‘1+2+3*4’…等等六十四个不重复的运算式。但是我们还要考虑到所有数字的排列组合的情况，注意在以上的例子里，所有运算的数字是没有变化的，但数字位置的变化在多数情况下会对运算结果造成影响，也就是说在我们改变运算符号的同时，我们也要考虑到所有数字的排列情况。</p>
+<p>　　同样，我们也可以用以上相似的嵌套循环逻辑来用代码实现：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_num_comb</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    all_comb <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 准备收集所有排列组合</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 三个嵌套for循环分别对应在num_list里的序数</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">for</span> l <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token comment"># 确定没有重复元素</span>
+                    <span class="token keyword">if</span> i <span class="token operator">!=</span> j <span class="token keyword">and</span> i <span class="token operator">!=</span> k <span class="token keyword">and</span> i <span class="token operator">!=</span> l <span class="token keyword">and</span> j <span class="token operator">!=</span> k <span class="token keyword">and</span> j <span class="token operator">!=</span> l <span class="token keyword">and</span> k <span class="token operator">!=</span> l<span class="token punctuation">:</span>
+                        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">[</span>num_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> num_list<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> num_list<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#打印最终结果</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>　　但是我们可以通过以上两段代码发现，在这里用for loop来分别实现符号和数字的排列组合虽然是可行的（同理我们也可以用类似的for loop结构来），但却无法延伸到这道题的局限外，也就是说，这个思路仅限于这道题的Part 1，如果要做第二部分的话，我们需要重新写这部分的函数（这也是这两道题的第一个主要差别：数字数量的不确定性）。</p>
+<p>　　为了使第一部分的解法可以延伸到第二题，我们需要换个思路。很自然的，为了解决数字数量的不确定问题，我们不能够再使用for loop这种需要定量条件的方法，而是使用递归（recursion）。</p>
+<p>　　以上我们讨论到的两个问题，运算符号以及运算数字的排列组合，可以被分别写作两个递归函数。比起普通循环，递归函数的结构更加复杂。为了减少码代码时出现不必要的概念不清的错误，我们可以针对每个递归画出树形图来作结构分析。</p>
+<p>　　我们先来看运算符号的递归规律，如果我们有三个需要考虑的运算位置的话，树形图便如下图：</p>
+<p><img src="https://img2020.cnblogs.com/blog/2069656/202012/2069656-20201231104525462-63015190.png" alt="img"></p>
+<p>　　通过观察，我们可以看到第一层有4个分支，第二层有16个，第三层有64个。不难看出，这个递归规律的复杂度是随着递归的深度而以二次增长，所以可以用Big-Oh Notation表达成 O(4^n)，n为运算符号的个数。（关于运算复杂度和常见algorithm会有后续文章跟进，在这里不做过多解释）</p>
+<p>根据以上基础结构，我们可以用代码来写出生成运算符号的递归函数，如下：</p>
+<p>复制代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">generate_permutated_list</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    
+    <span class="token comment"># 建立base case</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 当n为0时不返回任何数字</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>num_list<span class="token punctuation">]</span> <span class="token comment"># 当n为1时返回所有式子，作为之后首数字的基础</span>
+    list_of_comb <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 新建列表来存更新的排列</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        first_num <span class="token operator">=</span> num_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token comment"># 生成首字母</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> generate_permutated_list<span class="token punctuation">(</span>num_list<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> num_list<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 去除首字母，继续递归</span>
+            list_of_comb<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>first_num<span class="token punctuation">]</span> <span class="token operator">+</span> j<span class="token punctuation">)</span> <span class="token comment">#加入新的list</span>
+            
+    <span class="token keyword">return</span> list_of_comb <span class="token comment"># 最后返回最终结果</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>　　如果再次检查运算复杂度，我们不难看出这个函数的复杂度符合我们的预测，为O(4^n)。</p>
+<p>　　好了，我们再来看数字的排列方法。如果想要找到固定数量的数字的所有排列方式，我们需要用到permutation的逻辑：找到所有排列（长度为n）的第一个元素，然后根据每个元素找到剩余数字的第一个元素（剩余数字排列长度为n-1），以此类推，直到最后只剩余一个数字。我们来看一下这个递归思路的树状图（此树状图用了长度为三的list为例）：</p>
+<p><img src="https://img2020.cnblogs.com/blog/2069656/202012/2069656-20201231120654527-1702354859.png" alt="img"></p>
+<p>　　递归的第一层有三个元素，第二层有3<em>2=6个元素，第三层有3</em>2*1=6个元素，我们可以看出这个逻辑的复杂度为 O(n!), n为需要排列组合数字的个数。</p>
+<p>Permutation的逻辑比运算符号的排列稍稍复杂，但是我们可以用类似的递归结构来解决不同的问题，代码如下：</p>
+<p>复制代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">generate_permutated_list</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 建立base case</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 当n为0时不返回任何数字</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>num_list<span class="token punctuation">]</span> <span class="token comment"># 当n为1时返回所有式子，作为之后首数字的基础</span>
+    list_of_comb <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 新建列表来存更新的排列</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+         first_num <span class="token operator">=</span> num_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token comment"># 生成首字母</span>
+         <span class="token keyword">for</span> j <span class="token keyword">in</span> generate_permutated_list<span class="token punctuation">(</span>num_list<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> num_list<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 去除首字母，继续递归</span>
+           list_of_comb<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>first_num<span class="token punctuation">]</span> <span class="token operator">+</span> j<span class="token punctuation">)</span> <span class="token comment">#加入新的list</span>
+            
+    <span class="token keyword">return</span> list_of_comb <span class="token comment"># 最后返回最终结果</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>　　分别生成数学操作符号以及所有数字的排列组合后，我们要把两个组合整合起来，以此生成所有的排列可能性。因为这里我们不用考虑排列组合数列的不确定性的问题（每个排列的长度，以及每组数学操作符号的长度维持不变），我们可以用循环的思维来生成所有数学表达式（所有数字和数学操作符号的组合）。但是生成所有数学表达式还不能完整的解决这个问题，因为我们不仅仅要生成所有的数学表达式，还要把表达式估值并和最终的目标数字进行比较。所以在组合最终的函数之前，我们需要先写一个估值函数来方便之后的使用。</p>
+<p>　　估值函数的难点在于数学操作符号的处理，因为在数学表达式里这些运算符号都是以字符串的形式表达，例如 ‘+’，‘-’，所以无法当作正常运算符号放到代码中来操作。所以在这个情况，我们要重新赋予这些字符串它们象征的含义，代码如下：</p>
+<p>复制代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">modify_op</span><span class="token punctuation">(</span>equation<span class="token punctuation">,</span> op<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''this function modify the given equation by only computing the section with the given operators
+    parameters:
+        equation: a list that represents a given mathematical equation which may or may not contain the 
+                given numerical operators. Ex, ['1','+','2'] represents the equation 1+2
+        op: a string that is the given numerical operators'''</span>
+    
+    <span class="token comment"># 这里我们把代表数学计算的字符串和以上定义的操作函数的名字以字典的方式联系并储存起来</span>
+    operators <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'/'</span><span class="token punctuation">:</span>division<span class="token punctuation">,</span> <span class="token string">'*'</span><span class="token punctuation">:</span>multiply<span class="token punctuation">,</span> <span class="token string">'+'</span><span class="token punctuation">:</span>add<span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">:</span>subtract<span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">while</span> op <span class="token keyword">in</span> equation<span class="token punctuation">:</span> <span class="token comment"># 用while循环来确保没有遗漏任何字符</span>
+        i <span class="token operator">=</span> equation<span class="token punctuation">.</span>index<span class="token punctuation">(</span>op<span class="token punctuation">)</span> <span class="token comment"># 找到表达式内的第一处需要计算的字符位置</span>
+        <span class="token keyword">if</span> op <span class="token operator">==</span> <span class="token string">'/'</span> <span class="token keyword">and</span> equation<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">:</span> <span class="token comment"># 考虑除法操作的被除数为0的情况</span>
+             <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">''</span><span class="token punctuation">]</span>
+         <span class="token comment"># 把表达式需要计算的部分替换成计算结果</span>
+         equation<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>i<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">(</span>operators<span class="token punctuation">[</span>op<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token builtin">float</span><span class="token punctuation">(</span>equation<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">(</span>equation<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span> 
+            <span class="token comment"># 注意这里调用了前面字典里储存的函数名</span>
+     <span class="token keyword">return</span> equation <span class="token comment"># 返回结果</span>
  
-<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">char</span> str1<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"bell"</span><span class="token punctuation">;</span>
-    <span class="token keyword">char</span> str2<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"AI"</span><span class="token punctuation">;</span>
-    <span class="token keyword">char</span> str3<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span>  len <span class="token punctuation">;</span>
- 
-    <span class="token comment">// 复制 str1 到 str3</span>
-    <span class="token function">strcpy</span><span class="token punctuation">(</span> str3<span class="token punctuation">,</span> str1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"复制 str1 到 str3 strcpy( str3, str1) : "</span> <span class="token operator">&lt;&lt;</span> str3 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
- 	<span class="token comment">// 字符串比较</span>
-	<span class="token keyword">int</span> con1 <span class="token operator">=</span> <span class="token function">strcmp</span><span class="token punctuation">(</span> str1<span class="token punctuation">,</span> str2<span class="token punctuation">)</span> <span class="token punctuation">;</span>
-	<span class="token keyword">int</span> con2 <span class="token operator">=</span> <span class="token function">strcmp</span><span class="token punctuation">(</span> str1<span class="token punctuation">,</span> str3<span class="token punctuation">)</span> <span class="token punctuation">;</span>
-	<span class="token keyword">int</span> con3 <span class="token operator">=</span> <span class="token function">strcmp</span><span class="token punctuation">(</span> str2<span class="token punctuation">,</span> str3<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token keyword">def</span> <span class="token function">evaluate</span><span class="token punctuation">(</span>equation<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''return the evaluated result in float for the equation'''</span>
 
-	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"字符串比较：str1&lt;str2  "</span> <span class="token operator">&lt;&lt;</span> con1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> 
-	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"字符串比较：str1==str3  "</span> <span class="token operator">&lt;&lt;</span> con2 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> 
-	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"字符串比较：str2>str3  "</span> <span class="token operator">&lt;&lt;</span> con3 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> 
-
-    <span class="token comment">// 连接 str1 和 str2</span>
-    <span class="token function">strcat</span><span class="token punctuation">(</span> str1<span class="token punctuation">,</span> str2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"连接 str1 和 str2 strcat( str1, str2): "</span> <span class="token operator">&lt;&lt;</span> str1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
- 
-    <span class="token comment">// 连接后，str1 的总长度</span>
-    len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>str1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"连接后， str1 的总长度 strlen(str1) : "</span> <span class="token operator">&lt;&lt;</span> len <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-	
-	<span class="token comment">// 查找 </span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>执行以上代码的结果：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">复制 str1 到 str3 strcpy<span class="token punctuation">(</span> str3, str1<span class="token punctuation">)</span> <span class="token builtin class-name">:</span> bell
-字符串比较：str<span class="token operator"><span class="token file-descriptor important">1</span>&lt;</span>str2  <span class="token number">1</span>
-字符串比较：str1<span class="token operator">==</span>str3  <span class="token number">0</span>
-字符串比较：str<span class="token operator"><span class="token file-descriptor important">2</span>></span>str3  -1
-连接 str1 和 str2 strcat<span class="token punctuation">(</span> str1, str2<span class="token punctuation">)</span>: bellAI
-连接后， str1 的总长度 strlen<span class="token punctuation">(</span>str1<span class="token punctuation">)</span> <span class="token builtin class-name">:</span> <span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="C-中的-String-类"><a href="#C-中的-String-类" class="headerlink" title="C++ 中的 String 类"></a>C++ 中的 String 类</h2><p>C++ 标准库提供了 <strong><code>string 类</code></strong>类型，支持上述所有的操作，另外还增加了其他更多的功能。</p>
-<p>示例：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
- 
-<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-   string str1 <span class="token operator">=</span> <span class="token string">"bell"</span><span class="token punctuation">;</span>
-   string str2 <span class="token operator">=</span> <span class="token string">"AI"</span><span class="token punctuation">;</span>
-   string str3<span class="token punctuation">;</span>
-
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"字符串复制前 str3 : "</span> <span class="token operator">&lt;&lt;</span> str3 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-   <span class="token comment">// 复制 str1 到 str3</span>
-   str3 <span class="token operator">=</span> str1<span class="token punctuation">;</span>
-   cout <span class="token operator">&lt;&lt;</span> <span class="token string">"字符串复制后 str3 : "</span> <span class="token operator">&lt;&lt;</span> str3 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
- 
-   <span class="token comment">// 连接 str1 和 str2</span>
-   str3 <span class="token operator">=</span> str1 <span class="token operator">+</span> str2<span class="token punctuation">;</span>
-   cout <span class="token operator">&lt;&lt;</span> <span class="token string">"字符串连接 str1 + str2 : "</span> <span class="token operator">&lt;&lt;</span> str3 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
- 
-   <span class="token comment">// 连接后，str3 的总长度</span>
-   cout <span class="token operator">&lt;&lt;</span> <span class="token string">"字符串长度 str3.size() :  "</span> <span class="token operator">&lt;&lt;</span> str3<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
- 
-   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>运行结果如下：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">字符串复制前 str3 <span class="token builtin class-name">:</span>
-字符串复制后 str3 <span class="token builtin class-name">:</span> bell
-字符串连接 str1 + str2 <span class="token builtin class-name">:</span> bellAI
-字符串长度 str3.size<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin class-name">:</span>  <span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">for</span> op <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'/'</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">,</span><span class="token string">'+'</span><span class="token punctuation">,</span><span class="token string">'-'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># 这里需要注意标点顺序，除在最先，因为需要考虑特殊情况，乘其次，然后才是加减</span>
+        equation <span class="token operator">=</span> modify_op<span class="token punctuation">(</span>equation<span class="token punctuation">,</span> op<span class="token punctuation">)</span> <span class="token comment"># 使用helper function</span>
+    <span class="token keyword">return</span> equation<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment"># 最后返回最终计算结果</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>　　这里我们需要注意，这个估值函数能够接收表达式的形式为list，而list里的每项也必须要用字符串的形式来表达。</p>
+<p>　　最后，我们只要按照之前提到的思路，整合表达式，并用以上估值函数来计算表达式的值，就可以完成这道题。在给出完整代码之前，我们再来最后复习一下这道题的解题思路：</p>
+<ol>
+<li>找出所有加减乘除的排列组合</li>
+<li>找出所有数字的排列组合</li>
+<li>整合所有表达式可能</li>
+<li>用估值函数计算表达式</li>
+<li>对比表达式答案和目标数</li>
+<li>返回符合要求的表达式</li>
+</ol>
 
                 
             </div>
@@ -730,7 +712,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.ling71.cn/posts/260847956.html">https://blog.ling71.cn/posts/260847956.html</a>
+                    <a href="https://blog.ling71.cn/posts/">https://blog.ling71.cn/posts/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -768,20 +750,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/c/">
-                                    <span class="chip bg-color">c++</span>
+                                <a href="/tags/algorithm/">
+                                    <span class="chip bg-color">algorithm</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
-                                </a>
-                            
-                                <a href="/tags/String/">
-                                    <span class="chip bg-color">String</span>
-                                </a>
-                            
-                                <a href="/tags/C-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
-                                    <span class="chip bg-color">C++基础语法</span>
+                                <a href="/tags/python%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/">
+                                    <span class="chip bg-color">python算法练习</span>
                                 </a>
                             
                         </div>
@@ -1283,17 +1257,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/475360334.html">
+                <a href="/posts/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown/Latex数学符号">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="算法练习01：4张牌凑24点">
                         
-                        <span class="card-title">Markdown/Latex数学符号</span>
+                        <span class="card-title">算法练习01：4张牌凑24点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1303,26 +1278,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/algorithm/" class="post-category">
+                                    algorithm
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/markdown/">
-                        <span class="chip bg-color">markdown</span>
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
+                    <a href="/tags/python%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/">
+                        <span class="chip bg-color">python算法练习</span>
                     </a>
                     
                 </div>
@@ -1336,13 +1316,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1559260774.html">
+                <a href="/posts/1518592324.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="C++:字符串之比较函数strcmp()">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="hexo博客:butterfly主题解决无法显示Latex数学公式">
                         
-                        <span class="card-title">C++:字符串之比较函数strcmp()</span>
+                        <span class="card-title">hexo博客:butterfly主题解决无法显示Latex数学公式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1353,14 +1333,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C++
+                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2/" class="post-category">
+                                    hexo博客
                                 </a>
                             
                             
@@ -1370,16 +1350,24 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/c/">
-                        <span class="chip bg-color">c++</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/butterfly/">
+                        <span class="chip bg-color">butterfly</span>
                     </a>
                     
-                    <a href="/tags/strcmp/">
-                        <span class="chip bg-color">strcmp</span>
+                    <a href="/tags/markdown/">
+                        <span class="chip bg-color">markdown</span>
+                    </a>
+                    
+                    <a href="/tags/Latex/">
+                        <span class="chip bg-color">Latex</span>
+                    </a>
+                    
+                    <a href="/tags/math/">
+                        <span class="chip bg-color">math</span>
                     </a>
                     
                 </div>

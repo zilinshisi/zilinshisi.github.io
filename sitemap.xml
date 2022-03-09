@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ling71.cn/posts/</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.ling71.cn/log/index.html</loc>
     
     <lastmod>2022-02-27</lastmod>
@@ -121,85 +130,99 @@
 
   <url>
     <loc>https://blog.ling71.cn/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://blog.ling71.cn/tags/algorithm/</loc>
+    <lastmod>2022-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ling71.cn/tags/python%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</loc>
+    <lastmod>2022-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.ling71.cn/tags/c/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/strcmp/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/String/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/C-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/hexo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/hexo/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/butterfly/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/markdown/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/Latex/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/tags/math/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -207,22 +230,29 @@
 
   
   <url>
+    <loc>https://blog.ling71.cn/categories/algorithm/</loc>
+    <lastmod>2022-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.ling71.cn/categories/C/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/categories/hexo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.ling71.cn/categories/Markdown/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
