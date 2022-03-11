@@ -587,8 +587,7 @@
 <li>第二题需要考虑到一个，或者多个括号的算法，在这种情况下，我们不能直接计算结果，因为没有办法确定括号的个数和位置。</li>
 </ol>
 <p>　　<strong>第一部分</strong>我们可以从运算式子的结构入手。正常写出的话，一个有四个运算数字的式子会长这个样子：</p>
-<p>$1+2+3+4$</p>
-<p>结构一目了然，四个数字，三个运算符号。如果想生成所有排列组合的可能性的话，我们可以用嵌套for循环很容易的用代码实现如下：</p>
+<script type="math/tex; mode=display">{1+2+3+4}</script><p>结构一目了然，四个数字，三个运算符号。如果想生成所有排列组合的可能性的话，我们可以用嵌套for循环很容易的用代码实现如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_all_comb</span><span class="token punctuation">(</span>num_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> op_1 <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'+'</span><span class="token punctuation">,</span><span class="token string">'-'</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">,</span><span class="token string">'/'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># 用第一个for loop来考虑所有第一个位置的运算符号的可能性</span>
         <span class="token keyword">for</span> op_2 <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'+'</span><span class="token punctuation">,</span><span class="token string">'-'</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">,</span><span class="token string">'/'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># 用第二个for loop来考虑所有第二个位置的运算符号的可能性</span>
@@ -1555,7 +1554,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.7k</span>&nbsp;字
+                class="white-color">9.7k</span>&nbsp;字
             
             
             
