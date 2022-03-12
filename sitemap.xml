@@ -169,41 +169,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ling71.cn/tags/C/</loc>
-    <lastmod>2022-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ling71.cn/tags/%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2022-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ling71.cn/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2022-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ling71.cn/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2022-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ling71.cn/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2022-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.ling71.cn/tags/c/</loc>
     <lastmod>2022-03-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -239,28 +204,42 @@
   </url>
   
   <url>
+    <loc>https://blog.ling71.cn/tags/C/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ling71.cn/tags/%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ling71.cn/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ling71.cn/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ling71.cn/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.ling71.cn/tags/hexo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ling71.cn/tags/excel/</loc>
-    <lastmod>2022-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ling71.cn/tags/csv/</loc>
-    <lastmod>2022-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ling71.cn/tags/python/</loc>
     <lastmod>2022-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -296,6 +275,27 @@
   
   <url>
     <loc>https://blog.ling71.cn/tags/math/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ling71.cn/tags/excel/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ling71.cn/tags/csv/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ling71.cn/tags/python/</loc>
     <lastmod>2022-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
