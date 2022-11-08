@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cpp基础知识：字符串之比较函数strcmp() | 风铃扬音</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、介绍描述C 库函数 int strcmp(const char *str1, const char *str2) 把 str1 所指向的字符串和 str2 所指向的字符串进行比较。 声明：1int strcmp(const char *str1, const char *str2);  头文件：C++中的用法 1#include &lt;cstring&gt;  功能：用来比较两个字符串 参数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cpp基础知识：字符串之比较函数strcmp()">
+<meta property="og:url" content="http://example.com/2022/02/11/Cpp%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%8B%E6%AF%94%E8%BE%83%E5%87%BD%E6%95%B0strcmp()-cpp-ji-chu-zhi-shi--zi-fu-chuan-zhi-bi-jiao-han-shu-strcmp/index.html">
+<meta property="og:site_name" content="风铃扬音">
+<meta property="og:description" content="1、介绍描述C 库函数 int strcmp(const char *str1, const char *str2) 把 str1 所指向的字符串和 str2 所指向的字符串进行比较。 声明：1int strcmp(const char *str1, const char *str2);  头文件：C++中的用法 1#include &lt;cstring&gt;  功能：用来比较两个字符串 参数">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-11T04:26:19.000Z">
+<meta property="article:modified_time" content="2022-09-18T04:29:26.539Z">
+<meta property="article:author" content="magic">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="strcmp">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="风铃扬音" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/plugin/bganimation/bg.css">
+
+  
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Cpp基础知识：字符串之比较函数strcmp()-cpp-ji-chu-zhi-shi--zi-fu-chuan-zhi-bi-jiao-han-shu-strcmp" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/11/Cpp%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%8B%E6%AF%94%E8%BE%83%E5%87%BD%E6%95%B0strcmp()-cpp-ji-chu-zhi-shi--zi-fu-chuan-zhi-bi-jiao-han-shu-strcmp/" class="article-date">
+  <time class="post-time" datetime="2022-02-11T04:26:19.000Z" itemprop="datePublished">
+    <span class="post-month">2月</span><br/>
+    <span class="post-day">11</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Cpp基础知识：字符串之比较函数strcmp()
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>C 库函数 <strong><code>int strcmp(const char *str1, const char *str2)</code></strong> 把 <strong><code>str1</code></strong> 所指向的字符串和 <strong><code>str2</code></strong> 所指向的字符串进行比较。</p>
+<h3 id="声明："><a href="#声明：" class="headerlink" title="声明："></a>声明：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">strcmp</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *str1, <span class="type">const</span> <span class="type">char</span> *str2)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="头文件："><a href="#头文件：" class="headerlink" title="头文件："></a>头文件：</h3><p>C++中的用法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><p>用来比较两个字符串</p>
+<h3 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h3><p><code>s1</code>、<code>s2</code>为两个进行比较的字符串</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>该函数返回值如下：</p>
+<ul>
+<li>  如果返回值小于 0，则表示 <code>str1 </code> 小于 <code>str2</code>。</li>
+<li>  如果返回值大于 0，则表示 <code>str1</code> 大于 <code>str2</code>。</li>
+<li>  如果返回值等于 0，则表示 <code>str1</code> 等于 <code>str2</code>。</li>
+</ul>
+<h3 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h3><p><code>strcmp()</code>函数是根据<code>ACSII</code>码的值来比较两个字符串的；</p>
+<p><code>strcmp()</code>函数首先将<code>str1</code>字符串的第一个字符值减去<code>str2</code>第一个字符，若差值为零则继续比较下去；若差值不为零，则返回差值。</p>
+<h3 id="示例-用法"><a href="#示例-用法" class="headerlink" title="示例/用法"></a>示例/用法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">char</span> str1[<span class="number">15</span>];</span><br><span class="line">    <span class="type">char</span> str2[<span class="number">15</span>];</span><br><span class="line">    <span class="type">int</span> ret;</span><br><span class="line">	<span class="built_in">strcpy</span>(str1, <span class="string">&quot;abcdef&quot;</span>);</span><br><span class="line">	<span class="built_in">strcpy</span>(str2, <span class="string">&quot;ABCDEF&quot;</span>);</span><br><span class="line">	ret = <span class="built_in">strcmp</span>(str1, str2);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,ret);</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/11/Cpp%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%8B%E6%AF%94%E8%BE%83%E5%87%BD%E6%95%B0strcmp()-cpp-ji-chu-zhi-shi--zi-fu-chuan-zhi-bi-jiao-han-shu-strcmp/" data-id="cla8a2u7e0005uoyj8hdxcmhe" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/strcmp/" rel="tag">strcmp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/14/Cpp%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C-c%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Cpp基础知识：字符串的基础操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/07/hexo%E5%8D%9A%E5%AE%A2%EF%BC%9A%E4%BC%98%E5%8C%96%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5-hexo-bo-ke--you-hua-bo-ke-wen-zhang-lian-jie/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">hexo博客：优化博客文章链接</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">风铃扬音</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2021 - 2022 magic<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a target="_blank" rel="noopener" href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+  
+<script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+  
+<link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+
+  
+<script src="/plugin/galmenu/GalMenu.js"></script>
+
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

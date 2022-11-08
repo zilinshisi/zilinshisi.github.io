@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>算法练习：4张牌凑24点 | 风铃扬音</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天想和大家讨论的是一道我从这学期cs的期末考试得到灵感的题：Get 24 Poker Game。说到 Get 24 Poker Game，也就是我们通常说的凑24点，大家可能都比较熟悉。但是因为这个游戏有很多变种，我们还是来简单说一下游戏的规则。老规矩，上Wikipedia：    The 24 Game is an arithmetical card game in which the o">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法练习：4张牌凑24点">
+<meta property="og:url" content="http://example.com/2022/03/09/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%EF%BC%9A4%E5%BC%A0%E7%89%8C%E5%87%9124%E7%82%B9-suan-fa-lian-xi-4-zhang-pai-cou-24-dian/index.html">
+<meta property="og:site_name" content="风铃扬音">
+<meta property="og:description" content="今天想和大家讨论的是一道我从这学期cs的期末考试得到灵感的题：Get 24 Poker Game。说到 Get 24 Poker Game，也就是我们通常说的凑24点，大家可能都比较熟悉。但是因为这个游戏有很多变种，我们还是来简单说一下游戏的规则。老规矩，上Wikipedia：    The 24 Game is an arithmetical card game in which the o">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/03/10/YJRiv46CdOubWgD.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/10/JSI4uqotLPpyW9B.png">
+<meta property="article:published_time" content="2022-03-09T03:38:16.000Z">
+<meta property="article:modified_time" content="2022-09-18T04:32:26.386Z">
+<meta property="article:author" content="magic">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="python算法练习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/03/10/YJRiv46CdOubWgD.png">
+  
+    <link rel="alternate" href="/atom.xml" title="风铃扬音" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/plugin/bganimation/bg.css">
+
+  
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-算法练习：4张牌凑24点-suan-fa-lian-xi-4-zhang-pai-cou-24-dian" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/09/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%EF%BC%9A4%E5%BC%A0%E7%89%8C%E5%87%9124%E7%82%B9-suan-fa-lian-xi-4-zhang-pai-cou-24-dian/" class="article-date">
+  <time class="post-time" datetime="2022-03-09T03:38:16.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">09</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法练习：4张牌凑24点
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%A2%98%E9%9B%86/">题集</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　今天想和大家讨论的是一道我从这学期cs的期末考试得到灵感的题：Get 24 Poker Game。说到 Get 24 Poker Game，也就是我们通常说的凑24点，大家可能都比较熟悉。但是因为这个游戏有很多变种，我们还是来简单说一下游戏的规则。老规矩，上Wikipedia：</p>
+<blockquote>
+<p>  The <strong>24 Game</strong> is an arithmetical card game in which the objective is to find a way to manipulate four integers so that the end result is 24.</p>
+</blockquote>
+<p>　　简单来说，这个游戏需要玩家快速用随机抽出的四张牌上的整数通过常见的加减乘除计算来凑出24点来取得胜利（一定要用全4张，不可以弃牌）。不同于我们通常玩的斗地主，钓鱼等等扑克游戏，凑24点更考验玩家的数学反应能力（less fun but somewhat interesting:)）。在这里稍稍跑一下题，因为可能会有人好奇，为什么恰恰选了24这个数字。其实答案很直白，因为这个数字最容易被凑出来：24是拥有八个除数的最小整数(1, 2, 3, 4, 6, 8, 12, and <strong>24</strong>），使用这个数字不仅仅把游戏变得更加简单（毕竟可能没有人想花一个小时在用扑克牌凑数上），还把游戏作废（目标数字凑不出来）的几率降到最小。</p>
+<blockquote>
+<p>  第一部分的大意是写出一个函数，让其能够以列表的形式接收四个数字并试图用加减乘除的方法来凑出目标点数（<strong>注意，这里不包括括号操作</strong>）。</p>
+<p>  第二部分相对于前一部分难度更高一点，要求写出函数，让其能够接受四个数字，并可通过对其进行加减乘除（这里包括括号）的操作来凑出目标点数。</p>
+</blockquote>
+<p>　　</p>
+<hr>
+<p> 　</p>
+<p>　　通过读题，我们可以发现第一题和第二题最主要的差别在以下两点上：</p>
+<ol>
+<li> 第一题只需要考虑四个数字，三个符号的排列组合。</li>
+<li> 第二题需要考虑到一个，或者多个括号的算法，在这种情况下，我们不能直接计算结果，因为没有办法确定括号的个数和位置。</li>
+</ol>
+<p>　　<strong>第一部分</strong>我们可以从运算式子的结构入手。正常写出的话，一个有四个运算数字的式子会长这个样子：</p>
+<p>$${1+2+3+4}$$</p>
+<p>结构一目了然，四个数字，三个运算符号。如果想生成所有排列组合的可能性的话，我们可以用嵌套for循环很容易的用代码实现如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_all_comb</span>(<span class="params">num_list</span>):</span><br><span class="line">    <span class="keyword">for</span> op_1 <span class="keyword">in</span> [<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;/&#x27;</span>]: <span class="comment"># 用第一个for loop来考虑所有第一个位置的运算符号的可能性</span></span><br><span class="line">        <span class="keyword">for</span> op_2 <span class="keyword">in</span> [<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;/&#x27;</span>]: <span class="comment"># 用第二个for loop来考虑所有第二个位置的运算符号的可能性</span></span><br><span class="line">            <span class="keyword">for</span> op_3 <span class="keyword">in</span> [<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;/&#x27;</span>]: <span class="comment"># 用第三个for loop来考虑所有第三个位置的运算符号的可能性</span></span><br><span class="line">                <span class="comment"># 构造一个字符串</span></span><br><span class="line">                comb = <span class="built_in">str</span>(num_list[<span class="number">0</span>])+op_1+<span class="built_in">str</span>(num_list[<span class="number">1</span>])+op_2+<span class="built_in">str</span>(num_list[<span class="number">2</span>])+op_3+<span class="built_in">str</span>(num_list[<span class="number">3</span>]) </span><br><span class="line">                <span class="built_in">print</span>(comb) <span class="comment"># 打印运算式</span></span><br></pre></td></tr></table></figure>
+
+<p>　　这段代码的输出结果为 ‘1+2+3+4’，‘1+2+3-4’，‘1+2+3*4’…等等六十四个不重复的运算式。但是我们还要考虑到所有数字的排列组合的情况，注意在以上的例子里，所有运算的数字是没有变化的，但数字位置的变化在多数情况下会对运算结果造成影响，也就是说在我们改变运算符号的同时，我们也要考虑到所有数字的排列情况。</p>
+<p>　　同样，我们也可以用以上相似的嵌套循环逻辑来用代码实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_num_comb</span>(<span class="params">num_list</span>):</span><br><span class="line">    all_comb = [] <span class="comment"># 准备收集所有排列组合</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>): <span class="comment"># 三个嵌套for循环分别对应在num_list里的序数</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">                    <span class="comment"># 确定没有重复元素</span></span><br><span class="line">                    <span class="keyword">if</span> i != j <span class="keyword">and</span> i != k <span class="keyword">and</span> i != l <span class="keyword">and</span> j != k <span class="keyword">and</span> j != l <span class="keyword">and</span> k != l:</span><br><span class="line">                        <span class="built_in">print</span>([num_list[i], num_list[j], num_list[k]]) <span class="comment">#打印最终结果</span></span><br></pre></td></tr></table></figure>
+
+<p>　　但是我们可以通过以上两段代码发现，在这里用for loop来分别实现符号和数字的排列组合虽然是可行的（同理我们也可以用类似的for loop结构来），但却无法延伸到这道题的局限外，也就是说，这个思路仅限于这道题的Part 1，如果要做第二部分的话，我们需要重新写这部分的函数（这也是这两道题的第一个主要差别：数字数量的不确定性）。</p>
+<p>　　为了使第一部分的解法可以延伸到第二题，我们需要换个思路。很自然的，为了解决数字数量的不确定问题，我们不能够再使用for loop这种需要定量条件的方法，而是使用递归（recursion）。</p>
+<p>　　以上我们讨论到的两个问题，运算符号以及运算数字的排列组合，可以被分别写作两个递归函数。比起普通循环，递归函数的结构更加复杂。为了减少码代码时出现不必要的概念不清的错误，我们可以针对每个递归画出树形图来作结构分析。</p>
+<p>　　我们先来看运算符号的递归规律，如果我们有三个需要考虑的运算位置的话，树形图便如下图：</p>
+<p><img src="https://s2.loli.net/2022/03/10/YJRiv46CdOubWgD.png" alt="24点_递归树形图.png"></p>
+<p>　　通过观察，我们可以看到第一层有4个分支，第二层有16个，第三层有64个。不难看出，这个递归规律的复杂度是随着递归的深度而以二次增长，所以可以用Big-Oh Notation表达成 O(4^n)，n为运算符号的个数。（关于运算复杂度和常见algorithm会有后续文章跟进，在这里不做过多解释）</p>
+<p>根据以上基础结构，我们可以用代码来写出生成运算符号的递归函数，如下：</p>
+<p>复制代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">generate_permutated_list</span>(<span class="params">num_list</span>):</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 建立base case</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(num_list) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> [] <span class="comment"># 当n为0时不返回任何数字</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(num_list) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [num_list] <span class="comment"># 当n为1时返回所有式子，作为之后首数字的基础</span></span><br><span class="line">    list_of_comb = [] <span class="comment"># 新建列表来存更新的排列</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(num_list)):</span><br><span class="line">        first_num = num_list[i] <span class="comment"># 生成首字母</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> generate_permutated_list(num_list[:i] + num_list[i+<span class="number">1</span>:]): <span class="comment"># 去除首字母，继续递归</span></span><br><span class="line">            list_of_comb.append([first_num] + j) <span class="comment">#加入新的list</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> list_of_comb <span class="comment"># 最后返回最终结果</span></span><br></pre></td></tr></table></figure>
+
+<p>　　如果再次检查运算复杂度，我们不难看出这个函数的复杂度符合我们的预测，为O(4^n)。</p>
+<p>　　好了，我们再来看数字的排列方法。如果想要找到固定数量的数字的所有排列方式，我们需要用到permutation的逻辑：找到所有排列（长度为n）的第一个元素，然后根据每个元素找到剩余数字的第一个元素（剩余数字排列长度为n-1），以此类推，直到最后只剩余一个数字。我们来看一下这个递归思路的树状图（此树状图用了长度为三的list为例）：</p>
+<p><img src="https://s2.loli.net/2022/03/10/JSI4uqotLPpyW9B.png" alt="24点_递归树形图2.png"></p>
+<p>　　递归的第一层有三个元素，第二层有3<em>2=6个元素，第三层有3</em>2*1=6个元素，我们可以看出这个逻辑的复杂度为 O(n!), n为需要排列组合数字的个数。</p>
+<p>Permutation的逻辑比运算符号的排列稍稍复杂，但是我们可以用类似的递归结构来解决不同的问题，代码如下：</p>
+<p>复制代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">generate_permutated_list</span>(<span class="params">num_list</span>):</span><br><span class="line">    <span class="comment"># 建立base case</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(num_list) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> [] <span class="comment"># 当n为0时不返回任何数字</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(num_list) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [num_list] <span class="comment"># 当n为1时返回所有式子，作为之后首数字的基础</span></span><br><span class="line">    list_of_comb = [] <span class="comment"># 新建列表来存更新的排列</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(num_list)):</span><br><span class="line">         first_num = num_list[i] <span class="comment"># 生成首字母</span></span><br><span class="line">         <span class="keyword">for</span> j <span class="keyword">in</span> generate_permutated_list(num_list[:i] + num_list[i+<span class="number">1</span>:]): <span class="comment"># 去除首字母，继续递归</span></span><br><span class="line">           list_of_comb.append([first_num] + j) <span class="comment">#加入新的list</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> list_of_comb <span class="comment"># 最后返回最终结果</span></span><br></pre></td></tr></table></figure>
+
+<p>　　分别生成数学操作符号以及所有数字的排列组合后，我们要把两个组合整合起来，以此生成所有的排列可能性。因为这里我们不用考虑排列组合数列的不确定性的问题（每个排列的长度，以及每组数学操作符号的长度维持不变），我们可以用循环的思维来生成所有数学表达式（所有数字和数学操作符号的组合）。但是生成所有数学表达式还不能完整的解决这个问题，因为我们不仅仅要生成所有的数学表达式，还要把表达式估值并和最终的目标数字进行比较。所以在组合最终的函数之前，我们需要先写一个估值函数来方便之后的使用。</p>
+<p>　　估值函数的难点在于数学操作符号的处理，因为在数学表达式里这些运算符号都是以字符串的形式表达，例如 ‘+’，‘-’，所以无法当作正常运算符号放到代码中来操作。所以在这个情况，我们要重新赋予这些字符串它们象征的含义，代码如下：</p>
+<p>复制代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">modify_op</span>(<span class="params">equation, op</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;this function modify the given equation by only computing the section with the given operators</span></span><br><span class="line"><span class="string">    parameters:</span></span><br><span class="line"><span class="string">        equation: a list that represents a given mathematical equation which may or may not contain the </span></span><br><span class="line"><span class="string">                given numerical operators. Ex, [&#x27;1&#x27;,&#x27;+&#x27;,&#x27;2&#x27;] represents the equation 1+2</span></span><br><span class="line"><span class="string">        op: a string that is the given numerical operators&#x27;&#x27;&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 这里我们把代表数学计算的字符串和以上定义的操作函数的名字以字典的方式联系并储存起来</span></span><br><span class="line">    operators = &#123;<span class="string">&#x27;/&#x27;</span>:division, <span class="string">&#x27;*&#x27;</span>:multiply, <span class="string">&#x27;+&#x27;</span>:add, <span class="string">&#x27;-&#x27;</span>:subtract&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> op <span class="keyword">in</span> equation: <span class="comment"># 用while循环来确保没有遗漏任何字符</span></span><br><span class="line">        i = equation.index(op) <span class="comment"># 找到表达式内的第一处需要计算的字符位置</span></span><br><span class="line">        <span class="keyword">if</span> op == <span class="string">&#x27;/&#x27;</span> <span class="keyword">and</span> equation[i+<span class="number">1</span>] == <span class="string">&#x27;0&#x27;</span>: <span class="comment"># 考虑除法操作的被除数为0的情况</span></span><br><span class="line">             <span class="keyword">return</span> [<span class="string">&#x27;&#x27;</span>]</span><br><span class="line">         <span class="comment"># 把表达式需要计算的部分替换成计算结果</span></span><br><span class="line">         equation[i-<span class="number">1</span>:i+<span class="number">2</span>] = [<span class="built_in">str</span>(operators[op](<span class="built_in">float</span>(equation[i-<span class="number">1</span>]), <span class="built_in">float</span>(equation[i+<span class="number">1</span>])))] </span><br><span class="line">            <span class="comment"># 注意这里调用了前面字典里储存的函数名</span></span><br><span class="line">     <span class="keyword">return</span> equation <span class="comment"># 返回结果</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">evaluate</span>(<span class="params">equation</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;return the evaluated result in float for the equation&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> op <span class="keyword">in</span> [<span class="string">&#x27;/&#x27;</span>,<span class="string">&#x27;*&#x27;</span>,<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;-&#x27;</span>]: <span class="comment"># 这里需要注意标点顺序，除在最先，因为需要考虑特殊情况，乘其次，然后才是加减</span></span><br><span class="line">        equation = modify_op(equation, op) <span class="comment"># 使用helper function</span></span><br><span class="line">    <span class="keyword">return</span> equation[<span class="number">0</span>] <span class="comment"># 最后返回最终计算结果</span></span><br></pre></td></tr></table></figure>
+
+<p>　　这里我们需要注意，这个估值函数能够接收表达式的形式为list，而list里的每项也必须要用字符串的形式来表达。</p>
+<p>　　最后，我们只要按照之前提到的思路，整合表达式，并用以上估值函数来计算表达式的值，就可以完成这道题。在给出完整代码之前，我们再来最后复习一下这道题的解题思路：</p>
+<ol>
+<li> 找出所有加减乘除的排列组合</li>
+<li> 找出所有数字的排列组合</li>
+<li> 整合所有表达式可能</li>
+<li> 用估值函数计算表达式</li>
+<li> 对比表达式答案和目标数</li>
+<li> 返回符合要求的表达式</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/09/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%EF%BC%9A4%E5%BC%A0%E7%89%8C%E5%87%9124%E7%82%B9-suan-fa-lian-xi-4-zhang-pai-cou-24-dian/" data-id="cla8a2u890026uoyjh7e7azm3" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" rel="tag">python算法练习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/03/10/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aexcel%E6%96%87%E4%BB%B6%E8%BD%ACcsv-python-zi-dong-hua-excel-wen-jian-zhuan-csv/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          python自动化：excel文件转csv
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/19/hexo%E5%8D%9A%E5%AE%A2%EF%BC%9Abutterfly%E4%B8%BB%E9%A2%98%E8%A7%A3%E5%86%B3%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BALatex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-hexo%E5%8D%9A%E5%AE%A2butterfly%E4%B8%BB%E9%A2%98%E8%A7%A3%E5%86%B3%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BAlatex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">hexo博客：butterfly主题解决无法显示Latex数学公式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">风铃扬音</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2021 - 2022 magic<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a target="_blank" rel="noopener" href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+  
+<script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+  
+<link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+
+  
+<script src="/plugin/galmenu/GalMenu.js"></script>
+
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

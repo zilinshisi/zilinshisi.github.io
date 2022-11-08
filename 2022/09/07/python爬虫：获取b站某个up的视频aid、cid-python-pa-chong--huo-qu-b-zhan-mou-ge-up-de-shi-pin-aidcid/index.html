@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python爬虫：获取b站某个up的视频aid、cid | 风铃扬音</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="获取B站up的全部视频aid、cid代码比较乱，请轻喷 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657import requestsimport jsondef get_json(UserUid):    # UserUid &#x3D; &amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫：获取b站某个up的视频aid、cid">
+<meta property="og:url" content="http://example.com/2022/09/07/python%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96b%E7%AB%99%E6%9F%90%E4%B8%AAup%E7%9A%84%E8%A7%86%E9%A2%91aid%E3%80%81cid-python-pa-chong--huo-qu-b-zhan-mou-ge-up-de-shi-pin-aidcid/index.html">
+<meta property="og:site_name" content="风铃扬音">
+<meta property="og:description" content="获取B站up的全部视频aid、cid代码比较乱，请轻喷 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657import requestsimport jsondef get_json(UserUid):    # UserUid &#x3D; &amp;#x">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-07T07:07:45.659Z">
+<meta property="article:modified_time" content="2022-09-18T04:20:36.623Z">
+<meta property="article:author" content="magic">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="风铃扬音" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/plugin/bganimation/bg.css">
+
+  
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-python爬虫：获取b站某个up的视频aid、cid-python-pa-chong--huo-qu-b-zhan-mou-ge-up-de-shi-pin-aidcid" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/python%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96b%E7%AB%99%E6%9F%90%E4%B8%AAup%E7%9A%84%E8%A7%86%E9%A2%91aid%E3%80%81cid-python-pa-chong--huo-qu-b-zhan-mou-ge-up-de-shi-pin-aidcid/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T07:07:45.659Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python爬虫：获取b站某个up的视频aid、cid
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>获取B站up的全部视频aid、cid<br>代码比较乱，请轻喷</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_json</span>(<span class="params">UserUid</span>):</span><br><span class="line">    <span class="comment"># UserUid = &#x27;2026561407&#x27;</span></span><br><span class="line">    <span class="comment"># up主主页url</span></span><br><span class="line">    url_data = <span class="string">&#x27;https://api.bilibili.com/x/space/acc/info?mid=&#x27;</span> + UserUid + <span class="string">&#x27;&amp;jsonp=jsonp&#x27;</span></span><br><span class="line">    <span class="comment"># 视频集合页url</span></span><br><span class="line">    url_video = <span class="string">&#x27;https://api.bilibili.com/x/space/arc/search?mid=&#x27;</span> + UserUid + <span class="string">&#x27;&amp;pn=1&amp;ps=25&amp;index=1&amp;jsonp=jsonp&#x27;</span></span><br><span class="line">    headers = &#123;<span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63&#x27;</span>&#125;</span><br><span class="line">    <span class="comment"># ---------------获取数据------------------------</span></span><br><span class="line">    data = requests.get(url=url_data, headers=headers)</span><br><span class="line">    video = requests.get(url=url_video, headers=headers)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ---------------转化数据-------------------------</span></span><br><span class="line">    data_info = json.loads(data.text)</span><br><span class="line">    video_info = json.loads(video.text)</span><br><span class="line">    <span class="comment"># ---------------数据获取-------------------------</span></span><br><span class="line">    Uid = data_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;mid&quot;</span>]</span><br><span class="line">    Name = data_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;name&quot;</span>]</span><br><span class="line">    Video_AID = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        <span class="comment"># Video = info3[&quot;data&quot;][&quot;list&quot;][&quot;vlist&quot;]</span></span><br><span class="line">        Video_title = video_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;list&quot;</span>][<span class="string">&quot;vlist&quot;</span>][i][<span class="string">&quot;title&quot;</span>]</span><br><span class="line">        Video_play = video_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;list&quot;</span>][<span class="string">&quot;vlist&quot;</span>][i][<span class="string">&quot;play&quot;</span>]</span><br><span class="line">        Video_review = video_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;list&quot;</span>][<span class="string">&quot;vlist&quot;</span>][i][<span class="string">&quot;video_review&quot;</span>]</span><br><span class="line">        Video_aid = video_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;list&quot;</span>][<span class="string">&quot;vlist&quot;</span>][i][<span class="string">&quot;aid&quot;</span>]</span><br><span class="line">        <span class="comment"># print(type(Video_aid))</span></span><br><span class="line">        Video_AID.append(Video_aid)</span><br><span class="line">        <span class="comment"># print(&quot;-----%s的B站第%s个视频信息-----&quot;%(Name,i))</span></span><br><span class="line">        <span class="comment"># print(&quot;\tUid:%s&quot;%Uid)</span></span><br><span class="line">        <span class="comment"># print(&quot;\tVideo_title:%s\n&quot;</span></span><br><span class="line">        <span class="comment">#       &quot;\t播放量:%s\n&quot;</span></span><br><span class="line">        <span class="comment">#       &quot;\t评论数:%s\n&quot;</span></span><br><span class="line">        <span class="comment">#       &quot;\t视频aid:%s&quot;</span></span><br><span class="line">        <span class="comment">#       %(Video_title, Video_play, Video_review, Video_aid)</span></span><br><span class="line">        <span class="comment"># )</span></span><br><span class="line">    <span class="keyword">return</span> Video_AID</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_cid</span>(<span class="params">Video_aid</span>):</span><br><span class="line">    Video_CID = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> Video_aid:</span><br><span class="line">        url = <span class="string">&quot;https://api.bilibili.com/x/player/pagelist?aid=&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;&amp;jsonp=jsonp&quot;</span></span><br><span class="line">        headers = &#123;</span><br><span class="line">            <span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63&#x27;</span>&#125;</span><br><span class="line">        v_data = requests.get(url=url, headers=headers)</span><br><span class="line">        v_cid_info = json.loads(v_data.text)</span><br><span class="line">        video_cid = v_cid_info[<span class="string">&quot;data&quot;</span>][<span class="number">0</span>][<span class="string">&quot;cid&quot;</span>]</span><br><span class="line">        Video_CID.append(video_cid)</span><br><span class="line">        <span class="comment"># print(&quot;\t视频aid:%s&quot; % i, end=&quot;&quot;)</span></span><br><span class="line">        <span class="comment"># print(&quot;\t视频cid:%s&quot; % video_cid)</span></span><br><span class="line">    <span class="keyword">return</span> Video_CID</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    Video_AID = get_json(<span class="string">&#x27;2026561407&#x27;</span>)</span><br><span class="line">    Video_Cid = get_cid(Video_AID)</span><br><span class="line">    <span class="comment"># print(Video_Cid)</span></span><br></pre></td></tr></table></figure>
+
+<p>文章可自行全篇转载或部分摘取，注明出处→贴个原文链接意思意思一下即可。谢谢😜</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/python%E7%88%AC%E8%99%AB%EF%BC%9A%E8%8E%B7%E5%8F%96b%E7%AB%99%E6%9F%90%E4%B8%AAup%E7%9A%84%E8%A7%86%E9%A2%91aid%E3%80%81cid-python-pa-chong--huo-qu-b-zhan-mou-ge-up-de-shi-pin-aidcid/" data-id="cla8a2u7v0015uoyjau836xkt" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/09/07/python%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%BE%AA%E7%8E%AF%E8%BE%93%E5%87%BA%E5%BA%94%E7%94%A8-%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8-python-an-li--xun-huan-shu-chu-ying-yong---jiu-jiu-cheng-fa-biao/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          python案例：循环输出应用-九九乘法表
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/07/%E3%80%90%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E3%80%91win64%E4%BD%8DMySQL5732%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE--an-zhuang-jiao-cheng-win64-wei-mysql5732-xia-zai--an-zhuang-ji-pei-zhi/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">【安装教程】win64位MySQL5.7.32下载、安装及配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">风铃扬音</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2021 - 2022 magic<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a target="_blank" rel="noopener" href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+  
+<script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+  
+<link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+
+  
+<script src="/plugin/galmenu/GalMenu.js"></script>
+
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

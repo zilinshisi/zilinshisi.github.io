@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>风铃扬音</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="风铃扬音">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="风铃扬音">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="magic">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="风铃扬音" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/plugin/bganimation/bg.css">
+
+  
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main">
+  
+    <article id="post-python自动化：selenium自动登录新浪微博（失败版）-python-zi-dong-hua-selenium-zi-dong-deng-lu-xin-lang-wei-bo--shi-bai-ban-" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E5%A4%B1%E8%B4%A5%E7%89%88%EF%BC%89-python-zi-dong-hua-selenium-zi-dong-deng-lu-xin-lang-wei-bo--shi-bai-ban-/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T07:07:45.583Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E5%A4%B1%E8%B4%A5%E7%89%88%EF%BC%89-python-zi-dong-hua-selenium-zi-dong-deng-lu-xin-lang-wei-bo--shi-bai-ban-/">python自动化：selenium自动登录新浪微博（失败版）</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="这是第一次代码，结果为失败"><a href="#这是第一次代码，结果为失败" class="headerlink" title="这是第一次代码，结果为失败"></a>这是第一次代码，结果为失败</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#-*-codeing = utf-8-*-</span><br><span class="line"></span><br><span class="line">#@Author    : MTR</span><br><span class="line">#@File      : SinaDemo.py</span><br><span class="line">#@Software  : PyCharm</span><br><span class="line"></span><br><span class="line">from typing import re</span><br><span class="line">from selenium import webdriver</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">wb = webdriver.Chrome(&quot;C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe&quot;)</span><br><span class="line">wb.implicitly_wait(3)</span><br><span class="line"># wb.get(&#x27;https://weibo.com/&#x27;)</span><br><span class="line">wb.get(&#x27;https://passport.weibo.cn/signin/login&#x27;)</span><br><span class="line"></span><br><span class="line"># 输入你的用户名-----------锁定用户名输入框----------------输入</span><br><span class="line">elem = wb.find_element_by_xpath(&quot;//*[@id=&#x27;loginName&#x27;]&quot;)</span><br><span class="line">elem.send_keys(&quot;********&quot;) # 输入你的用户名-----------</span><br><span class="line"></span><br><span class="line"># 输入密码------------------锁定密码输入框----------------输入</span><br><span class="line">elem = wb.find_element_by_xpath(&quot;//*[@id=&#x27;loginPassword&#x27;]&quot;)</span><br><span class="line">elem.send_keys(&quot;*********&quot;) # 输入密码</span><br><span class="line"></span><br><span class="line">elem = wb.find_element_by_xpath(&quot;//*[@id=&#x27;loginAction&#x27;]&quot;)</span><br><span class="line">elem.click()</span><br><span class="line"></span><br><span class="line"># 简化代码输入版</span><br><span class="line"># wb.find_element_by_xpath(&quot;//*[@id=&#x27;loginName&#x27;]&quot;).send_keys(&quot;********&quot;) # 输入你的用户名</span><br><span class="line"></span><br><span class="line"># wb.find_element_by_xpath(&quot;//*[@id=&#x27;loginPassword&#x27;]&quot;).send_keys(&quot;*********&quot;) # 输入密码</span><br><span class="line"></span><br><span class="line"># 点击登录==回车</span><br><span class="line"># wb.find_element_by_xpath(&quot;//*[@id=&#x27;loginAction&#x27;]&quot;).click()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="chromedriver下载链接"><a href="#chromedriver下载链接" class="headerlink" title="chromedriver下载链接"></a>chromedriver下载链接</h2><p><a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/chromedriver/">http://npm.taobao.org/mirrors/chromedriver/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E5%A4%B1%E8%B4%A5%E7%89%88%EF%BC%89-python-zi-dong-hua-selenium-zi-dong-deng-lu-xin-lang-wei-bo--shi-bai-ban-/" data-id="cla8a2u7y001fuoyj9ihv2dka" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/selenium/" rel="tag">selenium</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-python自动化：selenium+cookie自动登录新浪微博（二）-python-zi-dong-hua-seleniumcookie-zi-dong-deng-lu-xin-lang-wei-bo--er-" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium+cookie%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E4%BA%8C%EF%BC%89-python-zi-dong-hua-seleniumcookie-zi-dong-deng-lu-xin-lang-wei-bo--er-/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T07:07:43.168Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium+cookie%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E4%BA%8C%EF%BC%89-python-zi-dong-hua-seleniumcookie-zi-dong-deng-lu-xin-lang-wei-bo--er-/">python自动化：selenium+cookie自动登录新浪微博（二）</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="首先导入包"><a href="#首先导入包" class="headerlink" title="首先导入包"></a>首先导入包</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
+<h3 id="打开自动化窗口"><a href="#打开自动化窗口" class="headerlink" title="打开自动化窗口"></a>打开自动化窗口</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开网址</span></span><br><span class="line">   wb = webdriver.Chrome(<span class="string">&quot;C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe&quot;</span>)</span><br><span class="line">   <span class="comment"># 隐式地等待</span></span><br><span class="line">   wb.implicitly_wait(<span class="number">3</span>)</span><br><span class="line">   wb.maximize_window()</span><br><span class="line">   wb.get(<span class="string">&#x27;https://weibo.com&#x27;</span>)</span><br><span class="line">   time.sleep(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="添加cookie"><a href="#添加cookie" class="headerlink" title="添加cookie"></a>添加cookie</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 向浏览器添加保存的cookies</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    cookies = json.load(<span class="built_in">open</span>(<span class="string">&quot;cookies.txt&quot;</span>, <span class="string">&quot;rb&quot;</span>))</span><br><span class="line">    <span class="keyword">for</span> cookie <span class="keyword">in</span> cookies:</span><br><span class="line">        cookie_dict = &#123;</span><br><span class="line">            <span class="string">&quot;domain&quot;</span>: cookie.get(<span class="string">&#x27;domain&#x27;</span>),  </span><br><span class="line">            <span class="string">&#x27;name&#x27;</span>: cookie.get(<span class="string">&#x27;name&#x27;</span>),</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span>: cookie.get(<span class="string">&#x27;value&#x27;</span>),</span><br><span class="line">            <span class="string">&quot;expires&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="string">&#x27;path&#x27;</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;httpOnly&#x27;</span>: <span class="literal">False</span>,</span><br><span class="line">            <span class="string">&#x27;HostOnly&#x27;</span>: <span class="literal">False</span>,</span><br><span class="line">            <span class="string">&#x27;Secure&#x27;</span>: <span class="literal">False</span>&#125;</span><br><span class="line">        wb.add_cookie(cookie_dict)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br></pre></td></tr></table></figure>
+<h3 id="添加cookie后记得刷新浏览器"><a href="#添加cookie后记得刷新浏览器" class="headerlink" title="添加cookie后记得刷新浏览器"></a>添加cookie后记得刷新浏览器</h3><pre><code>## 刷新
+time.sleep(10)
+wb.refresh()
+</code></pre>
+<p>   <em><strong>注：可以在这里添加你想要的操作内容</strong></em></p>
+<h3 id="操作过后就记得关闭"><a href="#操作过后就记得关闭" class="headerlink" title="操作过后就记得关闭"></a>操作过后就记得关闭</h3><pre><code># 关闭浏览器
+wb.close()
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium+cookie%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E4%BA%8C%EF%BC%89-python-zi-dong-hua-seleniumcookie-zi-dong-deng-lu-xin-lang-wei-bo--er-/" data-id="cla8a2u7x001duoyj22kw7b97" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/selenium/" rel="tag">selenium</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-python_excel文件转csvmd-pythonexcel文件转csvmd" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/python_excel%E6%96%87%E4%BB%B6%E8%BD%ACcsvmd-pythonexcel%E6%96%87%E4%BB%B6%E8%BD%ACcsvmd/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T07:07:43.167Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/python_excel%E6%96%87%E4%BB%B6%E8%BD%ACcsvmd-pythonexcel%E6%96%87%E4%BB%B6%E8%BD%ACcsvmd/">python_excel文件转csv.md</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="0-使用库"><a href="#0-使用库" class="headerlink" title="0. 使用库"></a>0. 使用库</h3><p>xlsx文件解析处理： openpyxl库</p>
+<p>csv文件格式生成：csv</p>
+<h3 id="1-导入openpyxl模块"><a href="#1-导入openpyxl模块" class="headerlink" title="1.  导入openpyxl模块"></a>1.  导入<code>openpyxl</code>模块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl <span class="comment">#导入模块openpyxl</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  <code>openpyxl</code>是第三方模块，需要先安装</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openpyxl</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="2-读取文件"><a href="#2-读取文件" class="headerlink" title="2. 读取文件"></a>2. 读取文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/img_convert/dae0fde2964cce7e795b1d6b4ae2e405.png" alt="excel_内容.png"></p>
+<h3 id="3-获取目标sheet"><a href="#3-获取目标sheet" class="headerlink" title="3. 获取目标sheet"></a>3. 获取目标sheet</h3><p><code>sheet：EXCEL</code>默认打开时一般有多个工作表：<code>Sheet1</code>、<code>Sheet2</code>、<code>Sheet3</code>…，<code>Sheet1</code>是其中的一个工作表。如果需要的话，可以在工作簿中新建多个工作表。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/de2b4dd3f73db97bd2eb245175abdbc7.png" alt="excel_sheet.png"></p>
+<h4 id="获取工作簿中所有工作表名称"><a href="#获取工作簿中所有工作表名称" class="headerlink" title="获取工作簿中所有工作表名称"></a>获取工作簿中所有工作表名称</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl </span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br><span class="line">sheets = workbook.sheetnames</span><br><span class="line"><span class="built_in">print</span>(sheets,<span class="built_in">type</span>(sheets))</span><br><span class="line"><span class="built_in">print</span>(sheets[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>[‘info’, ‘Sheet1’, ‘Sheet2’] &lt;class ‘list’&gt;<br>info</p>
+</blockquote>
+<h4 id="知道目标sheet名称"><a href="#知道目标sheet名称" class="headerlink" title="知道目标sheet名称"></a>知道目标sheet名称</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl </span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br><span class="line">workbook_sheet = workbook[<span class="string">&quot;info&quot;</span>] <span class="comment">#获取表单</span></span><br><span class="line"><span class="built_in">print</span>(workbook_sheet.cell(row=<span class="number">1</span>,column=<span class="number">1</span>).value) <span class="comment">#输出表单第一行第一列的值</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>   电影名</p>
+</blockquote>
+<blockquote>
+<p>  注意：get_sheet_by_name()方法已经未使用了，继续使用会出现警告：DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).</p>
+<p>  案例：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl </span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br><span class="line">workbook_sheet = workbook.get_sheet_by_name(<span class="string">&quot;info&quot;</span>) <span class="comment">#获取表单</span></span><br><span class="line"><span class="built_in">print</span>(workbook_sheet.cell(row=<span class="number">1</span>,column=<span class="number">1</span>).value) <span class="comment">#输出表单第一行第一列的值</span></span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果</span></span><br><span class="line"><span class="string">e:\python\shuju\ceshi.py:3: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).</span></span><br><span class="line"><span class="string">  workbook_sheet = workbook.get_sheet_by_name(&quot;info&quot;) #获取表单</span></span><br><span class="line"><span class="string">电影名</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="获取活跃sheet"><a href="#获取活跃sheet" class="headerlink" title="获取活跃sheet"></a>获取活跃sheet</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl </span><br><span class="line"></span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br><span class="line">workbook_sheet = workbook.active <span class="comment">#获取活跃表格</span></span><br><span class="line"><span class="built_in">print</span>(workbook_sheet.title)  <span class="comment">#获取活跃表格名称</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>  info</p>
+</blockquote>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>1、处理数据时，正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。</p>
+<p>2、写入多出一行空白行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;a&#x27;</span>, newline=<span class="string">&#x27;&#x27;</span>, encoding=<span class="string">&#x27;utf-8-sig&#x27;</span>) <span class="keyword">as</span> f: </span><br></pre></td></tr></table></figure>
+
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">xlsx_to_csv</span>(<span class="params">filename1, filename2</span>):</span><br><span class="line">    workbook = openpyxl.load_workbook(filename1)</span><br><span class="line">    table = workbook.active</span><br><span class="line">    <span class="comment"># utf-8-sig: 可以解决中文乱码问题</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(filename2,<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8-sig&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        write = csv.writer(f)</span><br><span class="line">        data = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,table.max_row+<span class="number">1</span>):</span><br><span class="line">            row_stack = []</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,table.max_column+<span class="number">1</span>):</span><br><span class="line">                row_stack.append(table.cell(row=i,column=j).value)</span><br><span class="line">            data.append(row_stack)</span><br><span class="line">        write.writerows(data)</span><br></pre></td></tr></table></figure>
+
+
+<p>个人博客：<a target="_blank" rel="noopener" href="http://lingyier.ling71.cn/">lingyier自学笔记</a><br>本文链接：<a target="_blank" rel="noopener" href="http://lingyier.ling71.cn/posts/4121841729.html">python程序01:excel文件转csv</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/python_excel%E6%96%87%E4%BB%B6%E8%BD%ACcsvmd-pythonexcel%E6%96%87%E4%BB%B6%E8%BD%ACcsvmd/" data-id="cla8a2u7o000luoyj7ae01sno" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-python自动化：selenium自动登录登录新浪微博（一）-python-zi-dong-hua-selenium-zi-dong-deng-lu-deng-lu-xin-lang-wei-bo--yi-" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E4%B8%80%EF%BC%89-python-zi-dong-hua-selenium-zi-dong-deng-lu-deng-lu-xin-lang-wei-bo--yi-/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T07:07:43.166Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E4%B8%80%EF%BC%89-python-zi-dong-hua-selenium-zi-dong-deng-lu-deng-lu-xin-lang-wei-bo--yi-/">python自动化：selenium自动登录登录新浪微博（一）</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>接上个文章，因为失败，思考了一下原因，参考了其他的博主。<br>使用cookie可以免密码登入网站。<br>所以自动化登录微博首先需要获取已经登录微博后浏览器的cookie。<br>接下来上代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入需要的数据包</span></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="comment"># 将获取的cookie保存在json文件中</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 首先创建函数(*^_^*)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_cookies</span>():</span><br><span class="line">    <span class="comment"># 保存cookies的文件</span></span><br><span class="line">    file = <span class="string">&#x27;cookies.json&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打开需要获取cookies的网站</span></span><br><span class="line">    wb = webdriver.Chrome(<span class="string">&quot;C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe&quot;</span>)</span><br><span class="line">    wb.implicitly_wait(<span class="number">3</span>)</span><br><span class="line">    wb.get(<span class="string">&#x27;https://weibo.com&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 网站打开后，在时间内手动执行登录操作</span></span><br><span class="line">    time.sleep(<span class="number">60</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 登录成功后，获取cookies并保存为json格式</span></span><br><span class="line">    cookies = wb.get_cookies()</span><br><span class="line">    fp = <span class="built_in">open</span>(file,<span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">    json.dump(cookies,fp)</span><br><span class="line">    fp.close()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#关闭浏览器</span></span><br><span class="line">    wb.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行代码获得cookie</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    get_cookies()</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong><br>chromedriver 版本有多个，    可以根据不同的需求到淘宝镜像网下载<a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/chromedriver/">http://npm.taobao.org/mirrors/chromedriver/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aselenium%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%99%BB%E5%BD%95%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%EF%BC%88%E4%B8%80%EF%BC%89-python-zi-dong-hua-selenium-zi-dong-deng-lu-deng-lu-xin-lang-wei-bo--yi-/" data-id="cla8a2u7z001juoyjhn5zhzcb" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/selenium/" rel="tag">selenium</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-【常用命令】MySQL--chang-yong-ming-ling-mysql" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/%E3%80%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E3%80%91MySQL--chang-yong-ming-ling-mysql/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T07:07:41.162Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/%E3%80%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E3%80%91MySQL--chang-yong-ming-ling-mysql/">【常用命令】MySQL</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">命令记录</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="登入MySQL"><a href="#登入MySQL" class="headerlink" title="登入MySQL"></a>登入MySQL</h3><ul>
+<li>mysql -u（用户名）-p –&gt;回车后输入密码<br>例： <code>mysql -u root -p</code> –&gt;Enter –&gt; 123456 –&gt;Enter</li>
+</ul>
+<h3 id="退出登入MySQL"><a href="#退出登入MySQL" class="headerlink" title="退出登入MySQL"></a>退出登入MySQL</h3><ul>
+<li>第一种方法<br> <code>exit</code></li>
+<li>第一种方法<br> <code>quit</code></li>
+<li>第一种方法<br> <code>\q</code></li>
+</ul>
+<h3 id="启动-停止-服务"><a href="#启动-停止-服务" class="headerlink" title="启动/停止 服务"></a>启动/停止 服务</h3><ul>
+<li>启动服务<br><code>net start mysql </code></li>
+<li>停止服务<br><code>net stot mysql </code></li>
+</ul>
+<h3 id="查看服务启动状态"><a href="#查看服务启动状态" class="headerlink" title="查看服务启动状态"></a>查看服务启动状态</h3><pre><code>window+R
+--&gt; services.msc
+--&gt; 找到MySQL
+</code></pre>
+<h3 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h3><p>  <strong>特别提醒：数据库内的命令必须以英文状态下“;”结尾！</strong></p>
+<ul>
+<li>显示数据库列表。<ul>
+<li> <code>show databases;</code></li>
+</ul>
+</li>
+<li>显示数据表的结构：<ul>
+<li><code>describe 表名;</code></li>
+<li><code>desc 表名;</code></li>
+</ul>
+</li>
+<li>建库与删库：<ul>
+<li><code>create database 库名;</code></li>
+<li><code>drop database 库名;</code></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/%E3%80%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E3%80%91MySQL--chang-yong-ming-ling-mysql/" data-id="cla8a2u87001yuoyje14fbjx0" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-C++算法：基础排序练习md-c算法基础排序练习md" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/C++%E7%AE%97%E6%B3%95%EF%BC%9A%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%BB%83%E4%B9%A0md-c%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%BB%83%E4%B9%A0md/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T07:07:41.149Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/C++%E7%AE%97%E6%B3%95%EF%BC%9A%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%BB%83%E4%B9%A0md-c%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%BB%83%E4%B9%A0md/">C++算法：基础排序练习.md</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序，对输入的n个数字进行升序排列。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行一个数n,</p>
+<p>第二行n个待排序的数字a<del>i</del>。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>一行升序排列，n个用空格隔开的数字。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4 3 2 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<h3 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h3><p>对100%数据，n≤1000,a<del>i</del>≤1000000。</p>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><h4 id="完整代码及注释说明"><a href="#完整代码及注释说明" class="headerlink" title="完整代码及注释说明"></a>完整代码及注释说明</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="type">int</span> arr[] = &#123;&#125;;</span><br><span class="line"><span class="comment">// 交换函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap_</span><span class="params">(<span class="type">int</span> &amp;a, <span class="type">int</span> &amp;b)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 选择排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">selectSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="comment">// 找到最小值的索引</span></span><br><span class="line">        <span class="type">int</span> minIndex = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">            <span class="comment">// 如果找到比最小值小的，则更新最小值的索引</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[minIndex])&#123;</span><br><span class="line">                <span class="comment">// 将最小值的索引更新为当前值的索引</span></span><br><span class="line">                minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将最小值与当前值交换</span></span><br><span class="line">        <span class="built_in">swap_</span>(arr[i], arr[minIndex]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	cin &gt;&gt; a;</span><br><span class="line">    <span class="comment">// 初始化数组</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a; i++) &#123;</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        cin &gt;&gt; b;</span><br><span class="line">        arr[i] = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    <span class="built_in">selectSort</span>(arr, a);</span><br><span class="line">    <span class="comment">// 输出数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a; i++) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>对输入的n个数字进行升序排列。每趟冒一个当前最大数字到后面。依次输出每一趟排序的结果，。</p>
+<h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h3><p>第一行一个数n,</p>
+<p>第二行n个待排序的数字a<del>i</del>。</p>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h3><p>n行，每行n个用空格隔开的数字，表示这一次的结果。</p>
+<h3 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4 3 2 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 2 1 4</span><br><span class="line">2 1 3 4</span><br><span class="line">1 2 3 4</span><br><span class="line">1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<h3 id="说明-提示-1"><a href="#说明-提示-1" class="headerlink" title="说明/提示"></a>说明/提示</h3><p>对100%数据，n≤1000,a<del>i</del>≤1000000。</p>
+<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><h4 id="完整代码及注释说明-1"><a href="#完整代码及注释说明-1" class="headerlink" title="完整代码及注释说明"></a>完整代码及注释说明</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="type">int</span> arr[] = &#123;&#125;;</span><br><span class="line"><span class="comment">// 交换函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap_</span><span class="params">(<span class="type">int</span> &amp;a, <span class="type">int</span> &amp;b)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 冒泡排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 循环n-1次</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="comment">// 循环n-i-1次</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="comment">// 如果前面的数比后面的数大，则交换</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="built_in">swap_</span>(arr[j], arr[j + <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 打印每次排序后的数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; n; k++) &#123;</span><br><span class="line">            cout &lt;&lt; arr[k] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	cin &gt;&gt; a;</span><br><span class="line">    <span class="comment">// 初始化数组</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a; i++) &#123;</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        cin &gt;&gt; b;</span><br><span class="line">        arr[i] = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 调用冒泡排序函数</span></span><br><span class="line">    <span class="built_in">bubbleSort</span>(arr, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="纸牌插排"><a href="#纸牌插排" class="headerlink" title="纸牌插排"></a>纸牌插排</h2><p>纸牌牌面从小到大的顺序依次为3~10，J，Q，K，1，2，小王，大王。</p>
+<h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h3><p>20张牌的大小，其中1~10用数字本身表示，<code>JQK</code>用11，12，13表示，小王和大王用20和30表示。</p>
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h3><p>整理好顺序的20张牌的大小，空格隔开。</p>
+<h3 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 1 4 4 3 6 10 13 12 11 30 20 7 8 9 4 5 5 5 5</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 4 4 4 5 5 5 5 6 7 8 9 10 11 12 13 1 2 20 30</span><br></pre></td></tr></table></figure>
+
+<h3 id="完整代码及注释说明-2"><a href="#完整代码及注释说明-2" class="headerlink" title="完整代码及注释说明"></a>完整代码及注释说明</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="type">int</span> arr[] = &#123;&#125;;</span><br><span class="line"><span class="comment">// 插入排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insertSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 对于未排序的元素，从后向前扫描，找到相应位置</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="comment">// 定义临时变量，用于存储待插入元素</span></span><br><span class="line">        <span class="type">int</span> temp = arr[i];</span><br><span class="line">        <span class="type">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 循环比较，找到插入位置</span></span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; temp) &#123;</span><br><span class="line">            arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 插入元素</span></span><br><span class="line">        arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">20</span>;</span><br><span class="line">    <span class="comment">// 初始化数组 </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a; i++) &#123;</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        cin &gt;&gt; b;</span><br><span class="line">        <span class="comment">// 将输入的1和2转换为14和15</span></span><br><span class="line">        <span class="keyword">if</span> (b == <span class="number">1</span> ) arr[i] = <span class="number">14</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b == <span class="number">2</span> ) arr[i] = <span class="number">15</span>;</span><br><span class="line">        <span class="keyword">else</span> arr[i] = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 调用排序函数</span></span><br><span class="line">    <span class="built_in">insertSort</span>(arr, a);</span><br><span class="line">    <span class="comment">// 输出排序的结果</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> l = <span class="number">0</span>; l &lt; a; l++) &#123;</span><br><span class="line">        <span class="comment">// 将14和15转换为1和2输出</span></span><br><span class="line">        <span class="keyword">if</span> (arr[l]==<span class="number">14</span>) cout &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(arr[l]==<span class="number">15</span>) cout &lt;&lt; <span class="number">2</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; arr[l] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/C++%E7%AE%97%E6%B3%95%EF%BC%9A%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%BB%83%E4%B9%A0md-c%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%BB%83%E4%B9%A0md/" data-id="cla8a2u780001uoyj93jqdm70" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-hexo博客记录_优化博客文章链接md-postsabbrlinkhtml" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/hexo%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95_%E4%BC%98%E5%8C%96%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5md-postsabbrlinkhtml/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T07:07:41.149Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/hexo%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95_%E4%BC%98%E5%8C%96%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5md-postsabbrlinkhtml/">hexo博客记录_优化博客文章链接.md</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在Hexo的默认设定中，文章链接就会是一大串的字符</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/074081852165744a4d15d184e7360cba.png"></p>
+<p>解决方法，使用<code>hexo-abbrlink</code>插件</p>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
+<li>  安装<code>hexo-abbrlink</code>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>  在hexo的配置文件<code>_config.yml</code>，修改<code>url</code>、<code>permalink</code>为（不是主题的配置文件）：</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: https://ling71.gitee.io/blog/ #网址/blog/</span><br><span class="line">permalink: posts/:abbrlink.html</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>在hexo的配置文件<code>_config.yml</code>中添加以下代码（不是主题的配置文件）：</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#abbrlink配置</span></span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc32  </span><br><span class="line">  rep: dec    </span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>  修改文件后，执行以下代码部署到<code>gitee</code>即可！</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="优化结果"><a href="#优化结果" class="headerlink" title="优化结果"></a>优化结果</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/7c98527cbfea79699c595fa7eef35715.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/hexo%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95_%E4%BC%98%E5%8C%96%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5md-postsabbrlinkhtml/" data-id="cla8a2u7j000buoyj9wwg6ylv" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-【安装教程】Centos 7 安装MySQL57--an-zhuang-jiao-cheng-centos7-an-zhuang-mysql57" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/07/%E3%80%90%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E3%80%91Centos%207%20%E5%AE%89%E8%A3%85MySQL57--an-zhuang-jiao-cheng-centos7-an-zhuang-mysql57/" class="article-date">
+  <time class="post-time" datetime="2022-09-07T06:28:27.012Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/%E3%80%90%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E3%80%91Centos%207%20%E5%AE%89%E8%A3%85MySQL57--an-zhuang-jiao-cheng-centos7-an-zhuang-mysql57/">【安装教程】Centos 7 安装MySQL5.7</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">安装记录</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、下载MySQL官方的-Yum-Repository"><a href="#1、下载MySQL官方的-Yum-Repository" class="headerlink" title="1、下载MySQL官方的 Yum Repository"></a>1、下载MySQL官方的 Yum Repository</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~ &amp;&amp; <span class="built_in">mkdir</span> /usr/mysql &amp;&amp; <span class="built_in">cd</span> /usr/mysql</span><br><span class="line">wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2、用yum安装Yum-Repository"><a href="#2、用yum安装Yum-Repository" class="headerlink" title="2、用yum安装Yum Repository"></a>2、用yum安装Yum Repository</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql57-community-release-el7-10.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3、安装MySQL服务器"><a href="#3、安装MySQL服务器" class="headerlink" title="3、安装MySQL服务器"></a>3、安装MySQL服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-community-server</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4、Mysql设置"><a href="#4、Mysql设置" class="headerlink" title="4、Mysql设置"></a>4、Mysql设置</h3><h4 id="启动Mysql数据库："><a href="#启动Mysql数据库：" class="headerlink" title="启动Mysql数据库："></a>启动Mysql数据库：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld.service</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="查看Mysql运行状态："><a href="#查看Mysql运行状态：" class="headerlink" title="查看Mysql运行状态："></a>查看Mysql运行状态：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
+
+<h4 id="出现以下信息，表示MySQL正常运行"><a href="#出现以下信息，表示MySQL正常运行" class="headerlink" title="出现以下信息，表示MySQL正常运行"></a>出现以下信息，表示MySQL正常运行</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">● mysqld.service - MySQL Server</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Tue 2022-09-06 16:28:18 CST; 18s ago</span><br><span class="line">     Docs: man:mysqld(8)</span><br><span class="line">           http://dev.mysql.com/doc/refman/en/using-systemd.html</span><br><span class="line">  Process: 19800 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid <span class="variable">$MYSQLD_OPTS</span> (code=exited, status=0/SUCCESS)</span><br><span class="line">  Process: 19747 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)</span><br><span class="line"> Main PID: 19803 (mysqld)</span><br><span class="line">   CGroup: /system.slice/mysqld.service</span><br><span class="line">           └─19803 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid</span><br><span class="line"></span><br><span class="line">Sep 06 16:28:14 hecs-235841 systemd[1]: Starting MySQL Server...</span><br><span class="line">Sep 06 16:28:18 hecs-235841 systemd[1]: Started MySQL Server.</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、修改数据库密码"><a href="#5、修改数据库密码" class="headerlink" title="5、修改数据库密码"></a>5、修改数据库密码</h3><h4 id="①"><a href="#①" class="headerlink" title="①"></a>①</h4><p>此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;password&quot;</span> /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
+
+<h4 id="②"><a href="#②" class="headerlink" title="②"></a>②</h4><p>执行上述命令的结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@hecs-235841 mysql]<span class="comment"># grep &quot;password&quot; /var/log/mysqld.log</span></span><br><span class="line">2022-09-06T08:28:15.815694Z 1 [Note] A temporary password is generated <span class="keyword">for</span> root@localhost: ozhw9tuaCi*A</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>密码是结果root@localhost:之后的字段</p>
+</blockquote>
+<h4 id="③"><a href="#③" class="headerlink" title="③"></a>③</h4><p>使用此命令进入数据库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+
+<h4 id="④"><a href="#④" class="headerlink" title="④"></a>④</h4><p>修改数据库进入密码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;new password&#x27;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中‘new password’替换成你要设置的密码，注意:密码设置必须要<strong>大小写字母数字和特殊符号（,/’;:等）</strong>,不然不能配置成功</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/%E3%80%90%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E3%80%91Centos%207%20%E5%AE%89%E8%A3%85MySQL57--an-zhuang-jiao-cheng-centos7-an-zhuang-mysql57/" data-id="cla8a2u81001puoyje1d9c45o" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" rel="tag">安装教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Cpp练习：排序-cpp-lian-xi--pai-xu" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/11/Cpp%E7%BB%83%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F-cpp-lian-xi--pai-xu/" class="article-date">
+  <time class="post-time" datetime="2022-03-11T06:01:49.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">11</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/11/Cpp%E7%BB%83%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F-cpp-lian-xi--pai-xu/">Cpp练习：排序</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%A2%98%E9%9B%86/">题集</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序，对输入的n个数字进行升序排列。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行一个数n,</p>
+<p>第二行n个待排序的数字a<del>i</del>。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>一行升序排列，n个用空格隔开的数字。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4 3 2 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<h3 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h3><p>对100%数据，n≤1000,a<del>i</del>≤1000000。</p>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><h4 id="完整代码及注释说明"><a href="#完整代码及注释说明" class="headerlink" title="完整代码及注释说明"></a>完整代码及注释说明</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="type">int</span> arr[] = &#123;&#125;;</span><br><span class="line"><span class="comment">// 交换函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap_</span><span class="params">(<span class="type">int</span> &amp;a, <span class="type">int</span> &amp;b)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 选择排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">selectSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="comment">// 找到最小值的索引</span></span><br><span class="line">        <span class="type">int</span> minIndex = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">            <span class="comment">// 如果找到比最小值小的，则更新最小值的索引</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[minIndex])&#123;</span><br><span class="line">                <span class="comment">// 将最小值的索引更新为当前值的索引</span></span><br><span class="line">                minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将最小值与当前值交换</span></span><br><span class="line">        <span class="built_in">swap_</span>(arr[i], arr[minIndex]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	cin &gt;&gt; a;</span><br><span class="line">    <span class="comment">// 初始化数组</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a; i++) &#123;</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        cin &gt;&gt; b;</span><br><span class="line">        arr[i] = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    <span class="built_in">selectSort</span>(arr, a);</span><br><span class="line">    <span class="comment">// 输出数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a; i++) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>对输入的n个数字进行升序排列。每趟冒一个当前最大数字到后面。依次输出每一趟排序的结果，。</p>
+<h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h3><p>第一行一个数n,</p>
+<p>第二行n个待排序的数字a<del>i</del>。</p>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h3><p>n行，每行n个用空格隔开的数字，表示这一次的结果。</p>
+<h3 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4 3 2 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 2 1 4</span><br><span class="line">2 1 3 4</span><br><span class="line">1 2 3 4</span><br><span class="line">1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<h3 id="说明-提示-1"><a href="#说明-提示-1" class="headerlink" title="说明/提示"></a>说明/提示</h3><p>对100%数据，n≤1000,a<del>i</del>≤1000000。</p>
+<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><h4 id="完整代码及注释说明-1"><a href="#完整代码及注释说明-1" class="headerlink" title="完整代码及注释说明"></a>完整代码及注释说明</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="type">int</span> arr[] = &#123;&#125;;</span><br><span class="line"><span class="comment">// 交换函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap_</span><span class="params">(<span class="type">int</span> &amp;a, <span class="type">int</span> &amp;b)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 冒泡排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 循环n-1次</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="comment">// 循环n-i-1次</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="comment">// 如果前面的数比后面的数大，则交换</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="built_in">swap_</span>(arr[j], arr[j + <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 打印每次排序后的数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; n; k++) &#123;</span><br><span class="line">            cout &lt;&lt; arr[k] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	cin &gt;&gt; a;</span><br><span class="line">    <span class="comment">// 初始化数组</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a; i++) &#123;</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        cin &gt;&gt; b;</span><br><span class="line">        arr[i] = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 调用冒泡排序函数</span></span><br><span class="line">    <span class="built_in">bubbleSort</span>(arr, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="纸牌插排"><a href="#纸牌插排" class="headerlink" title="纸牌插排"></a>纸牌插排</h2><p>纸牌牌面从小到大的顺序依次为3~10，J，Q，K，1，2，小王，大王。</p>
+<h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h3><p>20张牌的大小，其中1~10用数字本身表示，<code>JQK</code>用11，12，13表示，小王和大王用20和30表示。</p>
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h3><p>整理好顺序的20张牌的大小，空格隔开。</p>
+<h3 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 1 4 4 3 6 10 13 12 11 30 20 7 8 9 4 5 5 5 5</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 4 4 4 5 5 5 5 6 7 8 9 10 11 12 13 1 2 20 30</span><br></pre></td></tr></table></figure>
+
+<h3 id="完整代码及注释说明-2"><a href="#完整代码及注释说明-2" class="headerlink" title="完整代码及注释说明"></a>完整代码及注释说明</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="type">int</span> arr[] = &#123;&#125;;</span><br><span class="line"><span class="comment">// 插入排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insertSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 对于未排序的元素，从后向前扫描，找到相应位置</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="comment">// 定义临时变量，用于存储待插入元素</span></span><br><span class="line">        <span class="type">int</span> temp = arr[i];</span><br><span class="line">        <span class="type">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 循环比较，找到插入位置</span></span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; temp) &#123;</span><br><span class="line">            arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 插入元素</span></span><br><span class="line">        arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">20</span>;</span><br><span class="line">    <span class="comment">// 初始化数组 </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a; i++) &#123;</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        cin &gt;&gt; b;</span><br><span class="line">        <span class="comment">// 将输入的1和2转换为14和15</span></span><br><span class="line">        <span class="keyword">if</span> (b == <span class="number">1</span> ) arr[i] = <span class="number">14</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b == <span class="number">2</span> ) arr[i] = <span class="number">15</span>;</span><br><span class="line">        <span class="keyword">else</span> arr[i] = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 调用排序函数</span></span><br><span class="line">    <span class="built_in">insertSort</span>(arr, a);</span><br><span class="line">    <span class="comment">// 输出排序的结果</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> l = <span class="number">0</span>; l &lt; a; l++) &#123;</span><br><span class="line">        <span class="comment">// 将14和15转换为1和2输出</span></span><br><span class="line">        <span class="keyword">if</span> (arr[l]==<span class="number">14</span>) cout &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(arr[l]==<span class="number">15</span>) cout &lt;&lt; <span class="number">2</span> &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; arr[l] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/11/Cpp%E7%BB%83%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F-cpp-lian-xi--pai-xu/" data-id="cla8a2u7f0006uoyj0i2b4nzf" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" rel="tag">冒泡排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" rel="tag">插入排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" rel="tag">选择排序</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-python自动化：excel文件转csv-python-zi-dong-hua-excel-wen-jian-zhuan-csv" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/10/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aexcel%E6%96%87%E4%BB%B6%E8%BD%ACcsv-python-zi-dong-hua-excel-wen-jian-zhuan-csv/" class="article-date">
+  <time class="post-time" datetime="2022-03-10T09:30:19.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">10</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/10/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aexcel%E6%96%87%E4%BB%B6%E8%BD%ACcsv-python-zi-dong-hua-excel-wen-jian-zhuan-csv/">python自动化：excel文件转csv</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>xlsx文件解析处理： openpyxl库</p>
+<p>csv文件格式生成：csv</p>
+<h3 id="1-导入openpyxl模块"><a href="#1-导入openpyxl模块" class="headerlink" title="1.  导入openpyxl模块"></a>1.  导入<code>openpyxl</code>模块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl <span class="comment">#导入模块openpyxl</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  <code>openpyxl</code>是第三方模块，需要先安装</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openpyxl</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="2-读取文件"><a href="#2-读取文件" class="headerlink" title="2. 读取文件"></a>2. 读取文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/10/8wD5OpYzSXtybv9.png" alt="excel_内容.png"></p>
+<h3 id="3-获取目标sheet"><a href="#3-获取目标sheet" class="headerlink" title="3. 获取目标sheet"></a>3. 获取目标sheet</h3><p><code>sheet：EXCEL</code>默认打开时一般有多个工作表：<code>Sheet1</code>、<code>Sheet2</code>、<code>Sheet3</code>…，<code>Sheet1</code>是其中的一个工作表。如果需要的话，可以在工作簿中新建多个工作表。</p>
+<p><img src="https://s2.loli.net/2022/03/10/iszkTAjN7nLBZD3.png" alt="excel_sheet.png"></p>
+<h4 id="获取工作簿中所有工作表名称"><a href="#获取工作簿中所有工作表名称" class="headerlink" title="获取工作簿中所有工作表名称"></a>获取工作簿中所有工作表名称</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl </span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br><span class="line">sheets = workbook.sheetnames</span><br><span class="line"><span class="built_in">print</span>(sheets,<span class="built_in">type</span>(sheets))</span><br><span class="line"><span class="built_in">print</span>(sheets[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>[‘info’, ‘Sheet1’, ‘Sheet2’] &lt;class ‘list’&gt;<br>info</p>
+</blockquote>
+<h4 id="知道目标sheet名称"><a href="#知道目标sheet名称" class="headerlink" title="知道目标sheet名称"></a>知道目标sheet名称</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl </span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br><span class="line">workbook_sheet = workbook[<span class="string">&quot;info&quot;</span>] <span class="comment">#获取表单</span></span><br><span class="line"><span class="built_in">print</span>(workbook_sheet.cell(row=<span class="number">1</span>,column=<span class="number">1</span>).value) <span class="comment">#输出表单第一行第一列的值</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>   电影名</p>
+</blockquote>
+<blockquote>
+<p>  注意：get_sheet_by_name()方法已经未使用了，继续使用会出现警告：DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).</p>
+<p>  案例：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl </span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br><span class="line">workbook_sheet = workbook.get_sheet_by_name(<span class="string">&quot;info&quot;</span>) <span class="comment">#获取表单</span></span><br><span class="line"><span class="built_in">print</span>(workbook_sheet.cell(row=<span class="number">1</span>,column=<span class="number">1</span>).value) <span class="comment">#输出表单第一行第一列的值</span></span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">输出结果</span></span><br><span class="line"><span class="string">e:\python\shuju\ceshi.py:3: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).</span></span><br><span class="line"><span class="string">  workbook_sheet = workbook.get_sheet_by_name(&quot;info&quot;) #获取表单</span></span><br><span class="line"><span class="string">电影名</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="获取活跃sheet"><a href="#获取活跃sheet" class="headerlink" title="获取活跃sheet"></a>获取活跃sheet</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl </span><br><span class="line"></span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&#x27;info.xlsx&#x27;</span>) <span class="comment">#获取表格文件</span></span><br><span class="line">workbook_sheet = workbook.active <span class="comment">#获取活跃表格</span></span><br><span class="line"><span class="built_in">print</span>(workbook_sheet.title)  <span class="comment">#获取活跃表格名称</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>  info</p>
+</blockquote>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>1、处理数据时，正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。</p>
+<p>2、写入多出一行空白行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;a&#x27;</span>, newline=<span class="string">&#x27;&#x27;</span>, encoding=<span class="string">&#x27;utf-8-sig&#x27;</span>) <span class="keyword">as</span> f: </span><br></pre></td></tr></table></figure>
+
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">xlsx_to_csv</span>(<span class="params">filename1, filename2</span>):</span><br><span class="line">    workbook = openpyxl.load_workbook(filename1)</span><br><span class="line">    table = workbook.active</span><br><span class="line">    <span class="comment"># utf-8-sig: 可以解决中文乱码问题</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(filename2,<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8-sig&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        write = csv.writer(f)</span><br><span class="line">        data = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,table.max_row+<span class="number">1</span>):</span><br><span class="line">            row_stack = []</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,table.max_column+<span class="number">1</span>):</span><br><span class="line">                row_stack.append(table.cell(row=i,column=j).value)</span><br><span class="line">            data.append(row_stack)</span><br><span class="line">        write.writerows(data)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/10/python%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9Aexcel%E6%96%87%E4%BB%B6%E8%BD%ACcsv-python-zi-dong-hua-excel-wen-jian-zhuan-csv/" data-id="cla8a2u7w0019uoyjf4e848n8" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/csv/" rel="tag">csv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; pre</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">next &amp;raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">风铃扬音</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2021 - 2022 magic<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a target="_blank" rel="noopener" href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+  
+<script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+  
+<link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+
+  
+<script src="/plugin/galmenu/GalMenu.js"></script>
+
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

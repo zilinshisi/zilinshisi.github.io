@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python爬虫：B站视频下载 | 风铃扬音</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="教程（暂无） 完整代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273# -*- coding : utf-8 -*-import requestsimport reimpo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫：B站视频下载">
+<meta property="og:url" content="http://example.com/2022/09/22/python%E7%88%AC%E8%99%AB%EF%BC%9AB%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD-python-pa-chong-b-zhan-shi-pin-xia-zai/index.html">
+<meta property="og:site_name" content="风铃扬音">
+<meta property="og:description" content="教程（暂无） 完整代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273# -*- coding : utf-8 -*-import requestsimport reimpo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-22T12:09:29.359Z">
+<meta property="article:modified_time" content="2022-09-22T12:24:15.832Z">
+<meta property="article:author" content="magic">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="风铃扬音" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/plugin/bganimation/bg.css">
+
+  
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-python爬虫：B站视频下载-python-pa-chong-b-zhan-shi-pin-xia-zai" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/09/22/python%E7%88%AC%E8%99%AB%EF%BC%9AB%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD-python-pa-chong-b-zhan-shi-pin-xia-zai/" class="article-date">
+  <time class="post-time" datetime="2022-09-22T12:09:29.359Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">22</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python爬虫：B站视频下载
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>（暂无）</p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding : utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 必须 &quot;referer&quot;: &quot;https://message.bilibili.com/&quot;</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36&quot;</span>,</span><br><span class="line">    <span class="string">&quot;referer&quot;</span>: <span class="string">&quot;https://message.bilibili.com/&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_request</span>(<span class="params">url</span>):</span><br><span class="line">    response = requests.get(url=url, headers=headers)</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取视频标题，视频链接，音频链接</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_video_data</span>(<span class="params">html_data</span>):</span><br><span class="line">    title = re.findall(<span class="string">&#x27;&lt;title data-vue-meta=&quot;true&quot;&gt;(.*?)&lt;/title&gt;&#x27;</span>,</span><br><span class="line">                       html_data)[<span class="number">0</span>].replace(<span class="string">&quot;_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">    json_data = re.findall(</span><br><span class="line">        <span class="string">r&#x27;&lt;script&gt;window.__playinfo__=(.*?)&lt;/script&gt;&#x27;</span>, html_data)[<span class="number">0</span>]</span><br><span class="line">    json_data = json.loads(json_data)</span><br><span class="line">    audio_url = json_data[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;dash&quot;</span>][<span class="string">&quot;audio&quot;</span>][<span class="number">0</span>][<span class="string">&quot;backupUrl&quot;</span>][<span class="number">0</span>]</span><br><span class="line">    video_url = json_data[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;dash&quot;</span>][<span class="string">&quot;video&quot;</span>][<span class="number">0</span>][<span class="string">&quot;backupUrl&quot;</span>][<span class="number">0</span>]</span><br><span class="line">    video_data = [title, audio_url, video_url]</span><br><span class="line">    <span class="keyword">return</span> video_data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_data</span>(<span class="params">file_name, audio_url, video_url</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 正在下载 &quot;</span> + file_name + <span class="string">&quot;的音频...&quot;</span>)</span><br><span class="line">    audio_data = send_request(audio_url).content</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 完成下载 &quot;</span> + file_name + <span class="string">&quot;的音频！&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 正在下载 &quot;</span> + file_name + <span class="string">&quot;的视频...&quot;</span>)</span><br><span class="line">    video_data = send_request(video_url).content</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 完成下载 &quot;</span> + file_name + <span class="string">&quot;的视频！&quot;</span>)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file_name + <span class="string">&quot;.mp3&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(audio_data)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file_name + <span class="string">&quot;.mp4&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(video_data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">video_add_mp4</span>(<span class="params">file_name, mp4_file</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 正在合并 &quot;</span> + mp4_file + <span class="string">&quot;的视频...&quot;</span>)</span><br><span class="line">    outfile_name = file_name.split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>] + <span class="string">&#x27;-new.mp4&#x27;</span></span><br><span class="line">    <span class="comment"># FFmpeg的位置</span></span><br><span class="line">    cmd = <span class="string">f&#x27;E:\\FFmpeg\\bin\\ffmpeg -i <span class="subst">&#123;mp4_file&#125;</span> -i <span class="subst">&#123;file_name&#125;</span> -acodec copy -vcodec copy <span class="subst">&#123;outfile_name&#125;</span>&#x27;</span></span><br><span class="line">    <span class="built_in">print</span>(cmd)</span><br><span class="line">    subprocess.call(cmd, shell=<span class="literal">True</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 完成合并 &quot;</span> + mp4_file + <span class="string">&quot;的视频！&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 清理mp3文件 &quot;</span> + file_name)</span><br><span class="line">    os.remove(file_name)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 完成清理mp3文件：&quot;</span> + file_name)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 清理mp4文件：&quot;</span> + file_name)</span><br><span class="line">    os.remove(mp4_file)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] 完成清理mp4文件：&quot;</span> + file_name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    url = <span class="built_in">input</span>(<span class="string">&quot;输入bilibili视频对应的链接即可下载：&quot;</span>)</span><br><span class="line">    html_data = send_request(url).text</span><br><span class="line">    video_data = get_video_data(html_data)</span><br><span class="line">    save_data(video_data[<span class="number">0</span>], video_data[<span class="number">1</span>], video_data[<span class="number">2</span>])</span><br><span class="line">    <span class="built_in">print</span>(video_data[<span class="number">0</span>], video_data[<span class="number">1</span>], video_data[<span class="number">2</span>])</span><br><span class="line">    <span class="comment"># merge_data(video_data[0])</span></span><br><span class="line">    a = video_data[<span class="number">0</span>]+<span class="string">&quot;.mp3&quot;</span></span><br><span class="line">    b = video_data[<span class="number">0</span>]+<span class="string">&quot;.mp4&quot;</span></span><br><span class="line">    video_add_mp4(a, b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<h3 id="ffmpeg下载"><a href="#ffmpeg下载" class="headerlink" title="ffmpeg下载"></a>ffmpeg下载</h3><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1k_EdT-hXFnuCYU_sWrD2oQ">https://pan.baidu.com/s/1k_EdT-hXFnuCYU_sWrD2oQ</a><br>提取码：shpu</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/22/python%E7%88%AC%E8%99%AB%EF%BC%9AB%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD-python-pa-chong-b-zhan-shi-pin-xia-zai/" data-id="cla8a2u7u0012uoyj7om3asg5" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/03/C++%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501-c-ji-chu-yu-fa-xue-xi-ji-lu-01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          C++基础语法学习记录01
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/21/python%E6%A1%88%E4%BE%8B%EF%BC%9A%E8%B4%A7%E5%B8%81%E8%BD%AC%E6%8D%A2%20I-python-an-li--huo-bi-zhuan-huan-i/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">python案例：货币转换 I</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">风铃扬音</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">magic</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>28</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>25</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2021 - 2022 magic<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a target="_blank" rel="noopener" href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+  
+<script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+  
+<link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+
+  
+<script src="/plugin/galmenu/GalMenu.js"></script>
+
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
