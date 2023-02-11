@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>风铃扬音</title>
+  
+  
+  <link href="https://zilinshisi.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://zilinshisi.github.io/"/>
+  <updated>2023-02-09T01:34:02.454Z</updated>
+  <id>https://zilinshisi.github.io/</id>
+  
+  <author>
+    <name>magic</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>web安全攻防常见端口说明和攻击汇总</title>
+    <link href="https://zilinshisi.github.io/posts/1052752514.html"/>
+    <id>https://zilinshisi.github.io/posts/1052752514.html</id>
+    <published>2023-02-09T01:32:54.000Z</published>
+    <updated>2023-02-09T01:34:02.454Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="web" scheme="https://zilinshisi.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】如何将python的pip镜像源改到国内</title>
+    <link href="https://zilinshisi.github.io/posts/1677450529.html"/>
+    <id>https://zilinshisi.github.io/posts/1677450529.html</id>
+    <published>2023-01-07T06:28:18.000Z</published>
+    <updated>2023-01-10T07:00:54.875Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="问题记录" scheme="https://zilinshisi.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/tags/python/"/>
+    
+    <category term="pip" scheme="https://zilinshisi.github.io/tags/pip/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】pip升级报错</title>
+    <link href="https://zilinshisi.github.io/posts/3721209494.html"/>
+    <id>https://zilinshisi.github.io/posts/3721209494.html</id>
+    <published>2023-01-07T02:28:18.000Z</published>
+    <updated>2023-01-10T07:00:54.871Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="问题记录" scheme="https://zilinshisi.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/tags/python/"/>
+    
+    <category term="pip" scheme="https://zilinshisi.github.io/tags/pip/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】博文收藏</title>
+    <link href="https://zilinshisi.github.io/posts/2452520782.html"/>
+    <id>https://zilinshisi.github.io/posts/2452520782.html</id>
+    <published>2022-12-23T02:44:50.000Z</published>
+    <updated>2023-01-07T01:12:50.817Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="uncategorized" scheme="https://zilinshisi.github.io/categories/uncategorized/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】软件分享</title>
+    <link href="https://zilinshisi.github.io/posts/775699185.html"/>
+    <id>https://zilinshisi.github.io/posts/775699185.html</id>
+    <published>2022-12-22T02:16:53.000Z</published>
+    <updated>2023-01-07T01:25:17.937Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="问题记录" scheme="https://zilinshisi.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="软件分享" scheme="https://zilinshisi.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/"/>
+    
+    <category term="阿里云盘" scheme="https://zilinshisi.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】虚拟机里Centos7的IP地址查看</title>
+    <link href="https://zilinshisi.github.io/posts/226935312.html"/>
+    <id>https://zilinshisi.github.io/posts/226935312.html</id>
+    <published>2022-12-06T14:28:56.000Z</published>
+    <updated>2023-01-07T01:12:50.820Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="问题记录" scheme="https://zilinshisi.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Centos7" scheme="https://zilinshisi.github.io/tags/Centos7/"/>
+    
+    <category term="虚拟机" scheme="https://zilinshisi.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】网站收集</title>
+    <link href="https://zilinshisi.github.io/posts/1147566553.html"/>
+    <id>https://zilinshisi.github.io/posts/1147566553.html</id>
+    <published>2022-12-01T02:17:29.000Z</published>
+    <updated>2023-01-07T01:12:50.819Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="问题记录" scheme="https://zilinshisi.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="壁纸" scheme="https://zilinshisi.github.io/tags/%E5%A3%81%E7%BA%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】wordpress网站全站灰色简单代码</title>
+    <link href="https://zilinshisi.github.io/posts/3466157713.html"/>
+    <id>https://zilinshisi.github.io/posts/3466157713.html</id>
+    <published>2022-12-01T02:07:14.000Z</published>
+    <updated>2023-01-07T01:12:50.815Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="问题记录" scheme="https://zilinshisi.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="wordpress" scheme="https://zilinshisi.github.io/tags/wordpress/"/>
+    
+    <category term="个人网站" scheme="https://zilinshisi.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/"/>
+    
+    <category term="哀悼模式" scheme="https://zilinshisi.github.io/tags/%E5%93%80%E6%82%BC%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】win10/11网络正常无法访问某一个正常网站</title>
+    <link href="https://zilinshisi.github.io/posts/1567024561.html"/>
+    <id>https://zilinshisi.github.io/posts/1567024561.html</id>
+    <published>2022-11-19T08:40:58.000Z</published>
+    <updated>2023-01-10T06:59:00.507Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="问题记录" scheme="https://zilinshisi.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="HOSTS" scheme="https://zilinshisi.github.io/tags/HOSTS/"/>
+    
+    <category term="windows10，windows11" scheme="https://zilinshisi.github.io/tags/windows10%EF%BC%8Cwindows11/"/>
+    
+    <category term="网站访问" scheme="https://zilinshisi.github.io/tags/%E7%BD%91%E7%AB%99%E8%AE%BF%E9%97%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python画布画爱心/动态爱心</title>
+    <link href="https://zilinshisi.github.io/posts/1211407155.html"/>
+    <id>https://zilinshisi.github.io/posts/1211407155.html</id>
+    <published>2022-11-16T02:06:03.000Z</published>
+    <updated>2023-01-07T01:12:50.810Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/tags/python/"/>
+    
+    <category term="tkinter" scheme="https://zilinshisi.github.io/tags/tkinter/"/>
+    
+    <category term="动态爱心" scheme="https://zilinshisi.github.io/tags/%E5%8A%A8%E6%80%81%E7%88%B1%E5%BF%83/"/>
+    
+    <category term="爱心" scheme="https://zilinshisi.github.io/tags/%E7%88%B1%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【随笔】关于vscode安装包下载太慢</title>
+    <link href="https://zilinshisi.github.io/posts/3282907910.html"/>
+    <id>https://zilinshisi.github.io/posts/3282907910.html</id>
+    <published>2022-10-13T06:23:01.000Z</published>
+    <updated>2023-01-10T06:59:33.846Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="问题记录" scheme="https://zilinshisi.github.io/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="vscode" scheme="https://zilinshisi.github.io/tags/vscode/"/>
+    
+    <category term="下载" scheme="https://zilinshisi.github.io/tags/%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python案例：天天向上的力量</title>
+    <link href="https://zilinshisi.github.io/posts/508570005.html"/>
+    <id>https://zilinshisi.github.io/posts/508570005.html</id>
+    <published>2022-10-08T14:24:44.000Z</published>
+    <updated>2023-01-07T01:12:50.805Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="题集" scheme="https://zilinshisi.github.io/categories/%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/tags/python/"/>
+    
+    <category term="循环" scheme="https://zilinshisi.github.io/tags/%E5%BE%AA%E7%8E%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【安装教程】Devc++</title>
+    <link href="https://zilinshisi.github.io/posts/2076096595.html"/>
+    <id>https://zilinshisi.github.io/posts/2076096595.html</id>
+    <published>2022-10-08T04:12:18.000Z</published>
+    <updated>2023-01-07T01:20:38.130Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="安装记录" scheme="https://zilinshisi.github.io/categories/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="IDEL" scheme="https://zilinshisi.github.io/tags/IDEL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++基础语法学习记录01</title>
+    <link href="https://zilinshisi.github.io/posts/734194669.html"/>
+    <id>https://zilinshisi.github.io/posts/734194669.html</id>
+    <published>2022-10-03T02:28:03.000Z</published>
+    <updated>2023-01-07T01:12:50.801Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="基础语法" scheme="https://zilinshisi.github.io/categories/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    
+    
+    <category term="c++" scheme="https://zilinshisi.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬虫：B站视频下载</title>
+    <link href="https://zilinshisi.github.io/posts/513296044.html"/>
+    <id>https://zilinshisi.github.io/posts/513296044.html</id>
+    <published>2022-09-22T14:09:42.000Z</published>
+    <updated>2023-01-07T01:12:50.808Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://zilinshisi.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python案例：货币转换 I</title>
+    <link href="https://zilinshisi.github.io/posts/1259944154.html"/>
+    <id>https://zilinshisi.github.io/posts/1259944154.html</id>
+    <published>2022-09-21T04:49:40.000Z</published>
+    <updated>2023-01-07T01:12:50.793Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="题集" scheme="https://zilinshisi.github.io/categories/%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/tags/python/"/>
+    
+    <category term="条件分支" scheme="https://zilinshisi.github.io/tags/%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cpp基础知识：字符串的基础操作</title>
+    <link href="https://zilinshisi.github.io/posts/2312646557.html"/>
+    <id>https://zilinshisi.github.io/posts/2312646557.html</id>
+    <published>2022-09-18T04:30:54.000Z</published>
+    <updated>2023-01-07T01:12:50.800Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="https://zilinshisi.github.io/categories/C/"/>
+    
+    
+    <category term="c++" scheme="https://zilinshisi.github.io/tags/c/"/>
+    
+    <category term="字符串" scheme="https://zilinshisi.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+    <category term="String" scheme="https://zilinshisi.github.io/tags/String/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python案例：温度转换</title>
+    <link href="https://zilinshisi.github.io/posts/2343770970.html"/>
+    <id>https://zilinshisi.github.io/posts/2343770970.html</id>
+    <published>2022-09-18T03:53:14.000Z</published>
+    <updated>2023-01-07T01:12:50.807Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="题集" scheme="https://zilinshisi.github.io/categories/%E9%A2%98%E9%9B%86/"/>
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/tags/python/"/>
+    
+    <category term="条件分支" scheme="https://zilinshisi.github.io/tags/%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python自动化：selenium+cookie自动登录新浪微博（二）</title>
+    <link href="https://zilinshisi.github.io/posts/2850875788.html"/>
+    <id>https://zilinshisi.github.io/posts/2850875788.html</id>
+    <published>2022-09-07T07:31:16.000Z</published>
+    <updated>2023-01-07T01:12:50.809Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://zilinshisi.github.io/categories/python/"/>
+    
+    
+    <category term="selenium" scheme="https://zilinshisi.github.io/tags/selenium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【安装教程】win64位MySQL5.7.32下载、安装及配置</title>
+    <link href="https://zilinshisi.github.io/posts/1654634653.html"/>
+    <id>https://zilinshisi.github.io/posts/1654634653.html</id>
+    <published>2022-09-07T07:07:44.000Z</published>
+    <updated>2023-01-07T01:12:50.796Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="安装记录" scheme="https://zilinshisi.github.io/categories/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="mysql" scheme="https://zilinshisi.github.io/tags/mysql/"/>
+    
+    <category term="安装教程" scheme="https://zilinshisi.github.io/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>python爬虫：获取b站某个up的视频aid、cid | Hexo</title>
+  <meta name="description" content="获取B站up的全部视频aid、cid 代码比较乱，请轻喷 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657import requestsimport jsondef get_json(UserUid):    # UserUid &#x3D; &amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫：获取b站某个up的视频aid、cid">
+<meta property="og:url" content="https://zilinshisi.github.io/posts/801597125.html">
+<meta property="og:site_name" content="风铃扬音">
+<meta property="og:description" content="获取B站up的全部视频aid、cid 代码比较乱，请轻喷 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657import requestsimport jsondef get_json(UserUid):    # UserUid &#x3D; &amp;#">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-12T13:28:45.000Z">
+<meta property="article:modified_time" content="2023-01-07T01:12:50.810Z">
+<meta property="article:author" content="magic">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://zilinshisi.github.io/posts/801597125.html">
+  
+    <link rel="alternate" href="/atom.xml" title="风铃扬音" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/zilingshisi" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">FLYY</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">夜静风铃响佩环,秋声吹彻凤凰山。</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> fujian, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/zilingshisi" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo%E5%8D%9A%E5%AE%A2/">Hexo博客</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/uncategorized/">uncategorized</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">命令记录</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">基础语法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">安装记录</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E9%9B%86/">题集</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Centos7/" rel="tag">Centos7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HOSTS/" rel="tag">HOSTS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEL/" rel="tag">IDEL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E5%8D%9A%E5%AE%A2/" rel="tag">hexo博客</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pip/" rel="tag">pip</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" rel="tag">python算法练习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/" rel="tag">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strcmp/" rel="tag">strcmp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tkinter/" rel="tag">tkinter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows10%EF%BC%8Cwindows11/" rel="tag">windows10，windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/" rel="tag">wordpress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD/" rel="tag">下载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" rel="tag">个人网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E7%88%B1%E5%BF%83/" rel="tag">动态爱心</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%80%E6%82%BC%E6%A8%A1%E5%BC%8F/" rel="tag">哀悼模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A3%81%E7%BA%B8/" rel="tag">壁纸</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" rel="tag">安装教程</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AA%E7%8E%AF/" rel="tag">循环</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF/" rel="tag">条件分支</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%B1%E5%BF%83/" rel="tag">爱心</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E8%AE%BF%E9%97%AE/" rel="tag">网站访问</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/" rel="tag">软件分享</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/" rel="tag">阿里云盘</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Centos7/" style="font-size: 13px;">Centos7</a> <a href="/tags/HOSTS/" style="font-size: 13px;">HOSTS</a> <a href="/tags/IDEL/" style="font-size: 13px;">IDEL</a> <a href="/tags/Latex/" style="font-size: 13px;">Latex</a> <a href="/tags/String/" style="font-size: 13px;">String</a> <a href="/tags/algorithm/" style="font-size: 13px;">algorithm</a> <a href="/tags/c/" style="font-size: 13.67px;">c++</a> <a href="/tags/centos/" style="font-size: 13px;">centos</a> <a href="/tags/hexo%E5%8D%9A%E5%AE%A2/" style="font-size: 13.67px;">hexo博客</a> <a href="/tags/mysql/" style="font-size: 13.67px;">mysql</a> <a href="/tags/pip/" style="font-size: 13.33px;">pip</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/python%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" style="font-size: 13px;">python算法练习</a> <a href="/tags/selenium/" style="font-size: 13.67px;">selenium</a> <a href="/tags/strcmp/" style="font-size: 13px;">strcmp</a> <a href="/tags/tkinter/" style="font-size: 13px;">tkinter</a> <a href="/tags/vscode/" style="font-size: 13px;">vscode</a> <a href="/tags/web/" style="font-size: 13px;">web</a> <a href="/tags/windows10%EF%BC%8Cwindows11/" style="font-size: 13px;">windows10，windows11</a> <a href="/tags/wordpress/" style="font-size: 13px;">wordpress</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 13px;">下载</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" style="font-size: 13px;">个人网站</a> <a href="/tags/%E5%8A%A8%E6%80%81%E7%88%B1%E5%BF%83/" style="font-size: 13px;">动态爱心</a> <a href="/tags/%E5%93%80%E6%82%BC%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">哀悼模式</a> <a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 13px;">壁纸</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 13.33px;">字符串</a> <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="font-size: 13.33px;">安装教程</a> <a href="/tags/%E5%BE%AA%E7%8E%AF/" style="font-size: 13.33px;">循环</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13px;">排序</a> <a href="/tags/%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF/" style="font-size: 13.33px;">条件分支</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13.33px;">爬虫</a> <a href="/tags/%E7%88%B1%E5%BF%83/" style="font-size: 13px;">爱心</a> <a href="/tags/%E7%BD%91%E7%AB%99%E8%AE%BF%E9%97%AE/" style="font-size: 13px;">网站访问</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 13px;">虚拟机</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/" style="font-size: 13px;">软件分享</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/" style="font-size: 13px;">阿里云盘</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/posts/1052752514.html" class="title">web安全攻防常见端口说明和攻击汇总</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-09T01:32:54.000Z" itemprop="datePublished">2023-02-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a>
+              </p>
+              <p class="item-title">
+                <a href="/posts/1677450529.html" class="title">【随笔】如何将python的pip镜像源改到国内</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-07T06:28:18.000Z" itemprop="datePublished">2023-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a>
+              </p>
+              <p class="item-title">
+                <a href="/posts/3721209494.html" class="title">【随笔】pip升级报错</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-07T02:28:18.000Z" itemprop="datePublished">2023-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/uncategorized/">uncategorized</a>
+              </p>
+              <p class="item-title">
+                <a href="/posts/2452520782.html" class="title">【随笔】博文收藏</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-12-23T02:44:50.000Z" itemprop="datePublished">2022-12-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a>
+              </p>
+              <p class="item-title">
+                <a href="/posts/775699185.html" class="title">【随笔】软件分享</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-12-22T02:16:53.000Z" itemprop="datePublished">2022-12-22</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-python爬虫：获取b站某个up的视频aid、cid" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python爬虫：获取b站某个up的视频aid、cid
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/posts/801597125.html" class="article-date">
+	  <time datetime="2022-01-12T13:28:45.000Z" itemprop="datePublished">2022-01-12</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/posts/801597125.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 464(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>获取B站up的全部视频aid、cid 代码比较乱，请轻喷</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_json</span>(<span class="params">UserUid</span>):</span><br><span class="line">    <span class="comment"># UserUid = &#x27;2026561407&#x27;</span></span><br><span class="line">    <span class="comment"># up主主页url</span></span><br><span class="line">    url_data = <span class="string">&#x27;https://api.bilibili.com/x/space/acc/info?mid=&#x27;</span> + UserUid + <span class="string">&#x27;&amp;jsonp=jsonp&#x27;</span></span><br><span class="line">    <span class="comment"># 视频集合页url</span></span><br><span class="line">    url_video = <span class="string">&#x27;https://api.bilibili.com/x/space/arc/search?mid=&#x27;</span> + UserUid + <span class="string">&#x27;&amp;pn=1&amp;ps=25&amp;index=1&amp;jsonp=jsonp&#x27;</span></span><br><span class="line">    headers = &#123;<span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63&#x27;</span>&#125;</span><br><span class="line">    <span class="comment"># ---------------获取数据------------------------</span></span><br><span class="line">    data = requests.get(url=url_data, headers=headers)</span><br><span class="line">    video = requests.get(url=url_video, headers=headers)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ---------------转化数据-------------------------</span></span><br><span class="line">    data_info = json.loads(data.text)</span><br><span class="line">    video_info = json.loads(video.text)</span><br><span class="line">    <span class="comment"># ---------------数据获取-------------------------</span></span><br><span class="line">    Uid = data_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;mid&quot;</span>]</span><br><span class="line">    Name = data_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;name&quot;</span>]</span><br><span class="line">    Video_AID = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        <span class="comment"># Video = info3[&quot;data&quot;][&quot;list&quot;][&quot;vlist&quot;]</span></span><br><span class="line">        Video_title = video_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;list&quot;</span>][<span class="string">&quot;vlist&quot;</span>][i][<span class="string">&quot;title&quot;</span>]</span><br><span class="line">        Video_play = video_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;list&quot;</span>][<span class="string">&quot;vlist&quot;</span>][i][<span class="string">&quot;play&quot;</span>]</span><br><span class="line">        Video_review = video_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;list&quot;</span>][<span class="string">&quot;vlist&quot;</span>][i][<span class="string">&quot;video_review&quot;</span>]</span><br><span class="line">        Video_aid = video_info[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;list&quot;</span>][<span class="string">&quot;vlist&quot;</span>][i][<span class="string">&quot;aid&quot;</span>]</span><br><span class="line">        <span class="comment"># print(type(Video_aid))</span></span><br><span class="line">        Video_AID.append(Video_aid)</span><br><span class="line">        <span class="comment"># print(&quot;-----%s的B站第%s个视频信息-----&quot;%(Name,i))</span></span><br><span class="line">        <span class="comment"># print(&quot;\tUid:%s&quot;%Uid)</span></span><br><span class="line">        <span class="comment"># print(&quot;\tVideo_title:%s\n&quot;</span></span><br><span class="line">        <span class="comment">#       &quot;\t播放量:%s\n&quot;</span></span><br><span class="line">        <span class="comment">#       &quot;\t评论数:%s\n&quot;</span></span><br><span class="line">        <span class="comment">#       &quot;\t视频aid:%s&quot;</span></span><br><span class="line">        <span class="comment">#       %(Video_title, Video_play, Video_review, Video_aid)</span></span><br><span class="line">        <span class="comment"># )</span></span><br><span class="line">    <span class="keyword">return</span> Video_AID</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_cid</span>(<span class="params">Video_aid</span>):</span><br><span class="line">    Video_CID = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> Video_aid:</span><br><span class="line">        url = <span class="string">&quot;https://api.bilibili.com/x/player/pagelist?aid=&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;&amp;jsonp=jsonp&quot;</span></span><br><span class="line">        headers = &#123;</span><br><span class="line">            <span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63&#x27;</span>&#125;</span><br><span class="line">        v_data = requests.get(url=url, headers=headers)</span><br><span class="line">        v_cid_info = json.loads(v_data.text)</span><br><span class="line">        video_cid = v_cid_info[<span class="string">&quot;data&quot;</span>][<span class="number">0</span>][<span class="string">&quot;cid&quot;</span>]</span><br><span class="line">        Video_CID.append(video_cid)</span><br><span class="line">        <span class="comment"># print(&quot;\t视频aid:%s&quot; % i, end=&quot;&quot;)</span></span><br><span class="line">        <span class="comment"># print(&quot;\t视频cid:%s&quot; % video_cid)</span></span><br><span class="line">    <span class="keyword">return</span> Video_CID</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    Video_AID = get_json(<span class="string">&#x27;2026561407&#x27;</span>)</span><br><span class="line">    Video_Cid = get_cid(Video_AID)</span><br><span class="line">    <span class="comment"># print(Video_Cid)</span></span><br></pre></td></tr></table></figure>
+
+<p>文章可自行全篇转载或部分摘取，注明出处→贴个原文链接意思意思一下即可。谢谢😜</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://zilinshisi.github.io/posts/801597125.html" title="python爬虫：获取b站某个up的视频aid、cid" target="_blank" rel="external">https://zilinshisi.github.io/posts/801597125.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zilingshisi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zilingshisi" target="_blank"><span class="text-dark">FLYY</span><small class="ml-1x">夜静风铃响佩环,秋声吹彻凤凰山。</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/posts/687529883.html" title="hexo博客：如何新建一个博文"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/zilingshisi" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
